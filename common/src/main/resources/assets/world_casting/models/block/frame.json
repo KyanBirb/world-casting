@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "world_casting:block/frame_top",
+    "side": "world_casting:block/frame"
+  }
+}

@@ -1,0 +1,67 @@
+plugins {
+    id 'multiloader-common'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    neoFormVersion = neo_form_version
+    // Automatically enable AccessTransformers if the file exists
+    def at = file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+}
+
+dependencies {
+    compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
+    // fabric and neoforge both bundle mixinextras, so it is safe to use it in common
+    compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.4.1'
+    annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.4.1'
+
+    implementation("foundry.veil:veil-common-${project.minecraft_version}:${project.veil_version}") {
+        exclude group: "maven.modrinth"
+    }
+
+    compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-$minecraft_version:$sable_companion_version"
+    implementation ("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
+        exclude group: "foundry.veil"
+    }
+
+    compileOnly("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}") {
+        transitive = false
+    }
+
+    implementation("at.petra-k.hexcasting:hexcasting-neoforge-$minecraft_version:$hexcasting_version")
+    implementation("at.petra-k:paucal:$paucal_version+$minecraft_version-common")
+    implementation("com.samsthenerd.inline:inline-common:$minecraft_version-$inline_version") { transitive = false }
+    implementation("dev.architectury:architectury:$architectury_api_version") { transitive = false }
+    implementation("io.wispforest:accessories-common:$accessories_version+$minecraft_version") { transitive = false }
+}
+
+configurations {
+    commonJava {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+    commonKotlin {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+    commonResources {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+}
+
+artifacts {
+    commonJava sourceSets.main.java.sourceDirectories.singleFile
+    commonResources sourceSets.main.resources.sourceDirectories.singleFile
+    commonKotlin sourceSets.main.kotlin.sourceDirectories.filter { !it.name.endsWith("java") }.singleFile
+}
+repositories {
+    mavenCentral()
+}

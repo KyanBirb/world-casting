@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "world_casting:block/deconstructor"
+    },
+    "active=true": {
+      "model": "world_casting:block/deconstructor_active"
+    }
+  }
+}

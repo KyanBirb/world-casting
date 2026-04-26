@@ -1,0 +1,66 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            client()
+        }
+        data {
+            data()
+        }
+        server {
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    implementation("foundry.veil:veil-neoforge-$minecraft_version:$veil_version") {
+        exclude group: "maven.modrinth"
+    }
+
+    compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-$minecraft_version:$sable_companion_version"
+    implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
+        exclude group: "foundry.veil"
+    }
+
+    // Common
+    implementation("vazkii.patchouli:Patchouli:$minecraft_version-$patchouli_version-NEOFORGE")
+    implementation("at.petra-k.hexcasting:hexcasting-neoforge-$minecraft_version:$hexcasting_version")
+    implementation("at.petra-k:paucal:$paucal_version+$minecraft_version-neoforge")
+    implementation("com.samsthenerd.inline:inline-neoforge:$minecraft_version-$inline_version")
+    implementation("dev.architectury:architectury-neoforge:$architectury_api_version")
+    implementation("io.wispforest:accessories-neoforge:$accessories_version+$minecraft_version")
+
+    // NeoForge
+    implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
+    runtimeOnly("com.illusivesoulworks.caelus:caelus-neoforge:$caelus_version+$minecraft_version")
+    compileOnly("com.illusivesoulworks.caelus:caelus-neoforge:$caelus_version+$minecraft_version:api")
+
+}
+
+sourceSets.main {
+    resources { srcDir 'src/generated/resources' }
+}

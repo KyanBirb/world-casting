@@ -1,0 +1,67 @@
+plugins {
+    id 'multiloader-loader'
+    id 'fabric-loom'
+}
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
+    }
+
+    modImplementation("foundry.veil:veil-fabric-$minecraft_version:$veil_version") {
+        exclude group: "maven.modrinth"
+    }
+
+    modImplementation "dev.ryanhcode.sable-companion:sable-companion-fabric-$minecraft_version:$sable_companion_version"
+    modImplementation("dev.ryanhcode.sable:sable-fabric-${minecraft_version}:${sable_version}") {
+        exclude group: "foundry.veil"
+    }
+
+    modApi("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}")
+
+    // Common
+    modImplementation("vazkii.patchouli:Patchouli:$minecraft_version-$patchouli_version-FABRIC")
+    modImplementation("at.petra-k.hexcasting:hexcasting-fabric-$minecraft_version:$hexcasting_version")
+    modImplementation("at.petra-k:paucal:$paucal_version+$minecraft_version-fabric")
+    modImplementation("com.samsthenerd.inline:inline-fabric:$minecraft_version-$inline_version")
+    modImplementation("dev.architectury:architectury-fabric:$architectury_api_version")
+    modImplementation("io.wispforest:accessories-fabric:$accessories_version+$minecraft_version")
+
+    // Fabric
+    modImplementation("net.fabricmc:fabric-language-kotlin:$flk_version")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:$cc_version")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:$cc_version")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-item:$cc_version")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-block:$cc_version")
+    modImplementation("me.shedaniel.cloth:cloth-config-fabric:$cloth_config_version") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+}
+
+loom {
+    def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName('Fabric Client')
+            ideConfigGenerated(true)
+            runDir('runs/client')
+        }
+        server {
+            server()
+            setConfigName('Fabric Server')
+            ideConfigGenerated(true)
+            runDir('runs/server')
+        }
+    }
+}
