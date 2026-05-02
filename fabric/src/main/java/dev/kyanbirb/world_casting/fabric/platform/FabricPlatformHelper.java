@@ -18,7 +18,6 @@ import java.util.function.Supplier;
 import static dev.kyanbirb.world_casting.WorldCasting.path;
 
 public class FabricPlatformHelper implements PlatformHelper {
-
     @Override
     public <T extends BlockEntity> BlockEntityType.Builder<T> createBuilder(BiFunction<BlockPos, BlockState, T> factory, Block... validBlocks) {
         return BlockEntityType.Builder.of(factory::apply, validBlocks);
@@ -32,11 +31,6 @@ public class FabricPlatformHelper implements PlatformHelper {
     @Override
     public <T> Holder<T> register(Registry<T> registry, String id, Supplier<T> supplier) {
         return Holder.direct(Registry.register(registry, path(id), supplier.get()));
-    }
-
-    @Override
-    public ModelResourceLocation modelResourceLocation(ResourceLocation resourceLocation) {
-        return new ModelResourceLocation(resourceLocation, "standalone");
     }
 
 }

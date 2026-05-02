@@ -5,13 +5,17 @@ plugins {
 }
 
 base {
-    archivesName = "${mod_id}-${project.name}-${minecraft_version}"
+    archivesName = "${archive_name}-${project.name}-${minecraft_version}"
 }
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(java_version)
     withSourcesJar()
     withJavadocJar()
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 kotlin {
