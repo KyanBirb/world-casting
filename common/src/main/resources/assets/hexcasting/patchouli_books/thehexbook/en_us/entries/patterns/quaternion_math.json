@@ -1,0 +1,58 @@
+{
+  "name": "world_casting.entry.quaternion_math",
+  "category": "hexcasting:patterns",
+  "icon": "minecraft:enchanting_table",
+  "sortnum": 4,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.identity",
+      "anchor": "world_casting:quaternion.identity",
+      "input": "",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.identity"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.entity_orientation",
+      "anchor": "world_casting:quaternion.entity_orientation",
+      "input": "entity",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.entity_orientation"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:mul",
+      "anchor": "hexcasting:mul",
+      "input": "qtrn, qtrn",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.mul"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.rotation_x",
+      "anchor": "world_casting:quaternion.rotation_x",
+      "input": "num",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.rotation_x"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.rotation_y",
+      "anchor": "world_casting:quaternion.rotation_y",
+      "input": "num",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.rotation_y"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.rotation_z",
+      "anchor": "world_casting:quaternion.rotation_z",
+      "input": "num",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.rotation_z"
+    }
+  ]
+}

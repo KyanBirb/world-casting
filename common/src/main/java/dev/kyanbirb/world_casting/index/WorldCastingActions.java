@@ -15,79 +15,79 @@ import static at.petrak.hexcasting.api.casting.math.HexDir.*;
 
 public class WorldCastingActions {
     public static final Holder<ActionRegistryEntry> GET_SUB_LEVEL = make(
-            "sub_level/get_block",
+            "sub_level.get_block",
             HexPattern.fromAngles("edeeeede", SOUTH_EAST),
             new OpGetSubLevelAt()
     );
 
     public static final Holder<ActionRegistryEntry> GET_ENTITY_SUB_LEVEL = make(
-            "sub_level/get_entity",
+            "sub_level.get_entity",
             HexPattern.fromAngles("qaqqqqaq", SOUTH_WEST),
             new OpGetEntitySubLevel()
     );
 
     public static final Holder<ActionRegistryEntry> GET_MASS = make(
-            "sub_level/mass",
+            "sub_level.mass",
             HexPattern.fromAngles("waawaaw", NORTH_WEST),
             new OpGetMass()
     );
 
     public static final Holder<ActionRegistryEntry> IMPULSE_SUB_LEVEL = make(
-            "sub_level/impulse",
+            "sub_level.impulse",
             HexPattern.fromAngles("waadaqqq", EAST),
             OpImpulseSubLevel.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> ASSMBLE_RADIUS = make(
-            "sub_level/assemble_radius",
+            "sub_level.assemble_radius",
             HexPattern.fromAngles("aqwqawedwd", WEST),
             new OpAssembleRadius()
     );
 
     public static final Holder<ActionRegistryEntry> STORE_SUB_LEVEL = make(
-            "sub_level/store",
+            "sub_level.store",
             HexPattern.fromAngles("edade", NORTH_WEST),
             OpStoreSubLevel.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> RECALL_SUB_LEVEL = make(
-            "sub_level/recall",
+            "sub_level.recall",
             HexPattern.fromAngles("qadaq", NORTH_EAST),
             new OpRecallSubLevel()
     );
 
     public static final Holder<ActionRegistryEntry> CONTAINS_SUB_LEVEL = make(
-            "sub_level/contains",
+            "sub_level.contains",
             HexPattern.fromAngles("edadee", NORTH_WEST),
             new OpContainsSubLevel()
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_IDENTITY = make(
-            "quaternion/identity",
+            "quaternion.identity",
             HexPattern.fromAngles("aqqa", EAST),
             Action.makeConstantOp(QuaternionIota.IDENTITY)
     );
 
     public static final Holder<ActionRegistryEntry> ENTITY_ORIENTATION = make(
-            "quaternion/entity_orientation",
+            "quaternion.entity_orientation",
             HexPattern.fromAngles("waa", EAST),
             new OpGetEntityOrientation()
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_ROTATION_X = make(
-            "quaternion/rotation_x",
+            "quaternion.rotation_x",
             HexPattern.fromAngles("qqawwa", NORTH_WEST),
             new OpQuaternionRotation(Quaterniond::rotationX)
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_ROTATION_Y = make(
-            "quaternion/rotation_y",
+            "quaternion.rotation_y",
             HexPattern.fromAngles("qqawww", NORTH_WEST),
             new OpQuaternionRotation(Quaterniond::rotationY)
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_ROTATION_Z = make(
-            "quaternion/rotation_z",
+            "quaternion.rotation_z",
             HexPattern.fromAngles("qqawwd", NORTH_WEST),
             new OpQuaternionRotation(Quaterniond::rotationZ)
     );
