@@ -6,6 +6,7 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [
     "sable_compat.CastingEnvironmentMixin",
+    "sable_compat.CircleCastingEnvMixin",
     "sable_compat.SubLevelAssemblyHelperMixin",
     "vec_display.Vec3IotaMixin"
   ],
