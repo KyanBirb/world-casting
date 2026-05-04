@@ -17,7 +17,7 @@
     {
       "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.get_block",
-      "anchor": "world_casting:sub_leveel.get_block",
+      "anchor": "world_casting:sub_level.get_block",
       "input": "vec",
       "output": "fragment or null",
       "text": "world_casting.page.world_casting.sub_level.get_block"
@@ -25,15 +25,23 @@
     {
       "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.get_entity",
-      "anchor": "world_casting:sub_leveel.get_entity",
+      "anchor": "world_casting:sub_level.get_entity",
       "input": "entity",
       "output": "fragment or null",
       "text": "world_casting.page.world_casting.sub_level.get_entity"
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.get_radius",
+      "anchor": "world_casting:sub_level.get_radius",
+      "input": "vec, num",
+      "output": "[fragment]",
+      "text": "world_casting.page.world_casting.sub_level.get_radius"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.mass",
-      "anchor": "world_casting:sub_leveel.mass",
+      "anchor": "world_casting:sub_level.mass",
       "input": "fragment",
       "output": "num",
       "text": "world_casting.page.world_casting.sub_level.mass"
@@ -41,42 +49,10 @@
     {
       "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.assemble_radius",
-      "anchor": "world_casting:sub_leveel.assemble_radius",
-      "input": "fragment, vec",
-      "output": "",
-      "text": "world_casting.page.world_casting.sub_level.assemble_radius"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.impulse",
-      "anchor": "world_casting:sub_leveel.impulse",
-      "input": "fragment, vec",
-      "output": "",
-      "text": "world_casting.page.world_casting.sub_level.impulse"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.store",
-      "anchor": "world_casting:sub_leveel.store",
-      "input": "fragment, vec",
-      "output": "",
-      "text": "world_casting.page.world_casting.sub_level.store"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.recall",
-      "anchor": "world_casting:sub_leveel.recall",
-      "input": "vec, vec, qtrn",
+      "anchor": "world_casting:sub_level.assemble_radius",
+      "input": "vec, num",
       "output": "fragment",
-      "text": "world_casting.page.world_casting.sub_level.recall"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.contains",
-      "anchor": "world_casting:sub_leveel.contains",
-      "input": "vec",
-      "output": "bool",
-      "text": "world_casting.page.world_casting.sub_level.contains"
+      "text": "world_casting.page.world_casting.sub_level.assemble_radius"
     }
   ]
 }

@@ -26,6 +26,12 @@ public class WorldCastingActions {
             new OpGetEntitySubLevel()
     );
 
+    public static final Holder<ActionRegistryEntry> GET_SUB_LEVEL_RADIUS = make(
+            "sub_level.get_radius",
+            HexPattern.fromAngles("eeeeewaqa", NORTH_EAST),
+            new OpGetSubLevels()
+    );
+
     public static final Holder<ActionRegistryEntry> GET_MASS = make(
             "sub_level.mass",
             HexPattern.fromAngles("waawaaw", NORTH_WEST),
@@ -34,7 +40,7 @@ public class WorldCastingActions {
 
     public static final Holder<ActionRegistryEntry> IMPULSE_SUB_LEVEL = make(
             "sub_level.impulse",
-            HexPattern.fromAngles("waadaqqq", EAST),
+            HexPattern.fromAngles("dweeewdew", NORTH_WEST),
             OpImpulseSubLevel.INSTANCE
     );
 

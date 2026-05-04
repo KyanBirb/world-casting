@@ -22,8 +22,11 @@
   "world_casting.page.fragments.1": "Fragments are separated sections of the world capable of moving independently. They can fall, roll around, and collide with things all while everything in them behaves as it would in the rest of the world.$(br)Hexes can interact with them normally as well.",
   "world_casting.page.fragments.2": "When working with coordinates inside the space of a fragment, they appear localized relative to an arbitrary \"center\" position. Internally, these local positions are very large vectors and still behave like them when operated on.",
 
+  "world_casting.entry.fragment_manipulation": "Fragment Manipulation",
+
   "hexcasting.action.world_casting:sub_level.get_block": "Fragment Purification",
   "hexcasting.action.world_casting:sub_level.get_entity": "Fragment Purification",
+  "hexcasting.action.world_casting:sub_level.get_radius": "Zone Distillation: Fragment",
   "hexcasting.action.world_casting:sub_level.mass": "Mass Purification",
   "hexcasting.action.world_casting:sub_level.impulse": "Impulse Fragment",
   "hexcasting.action.world_casting:sub_level.assemble_radius": "Fracture World",
@@ -33,6 +36,7 @@
 
   "world_casting.page.world_casting.sub_level.get_block": "Removes a position from the stack and returns the fragment that contains it (or null).",
   "world_casting.page.world_casting.sub_level.get_entity": "Removes an entity from the stack and returns the fragment it's standing on (or null).",
+  "world_casting.page.world_casting.sub_level.get_radius": "Takes a position and a radius, returns every fragment within the radius",
   "world_casting.page.world_casting.sub_level.mass": "Returns the total mass of the fragment.",
   "world_casting.page.world_casting.sub_level.assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
   "world_casting.page.world_casting.sub_level.impulse": "Applies an impulse to the given fragment.",

@@ -1,6 +1,7 @@
 package dev.kyanbirb.world_casting.util
 
 import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import dev.kyanbirb.world_casting.content.iota.FragmentIota
@@ -30,6 +31,10 @@ fun List<Iota>.getQuaternion(idx: Int, argc: Int = 0): Quaterniondc {
 }
 
 inline val SubLevel.asActionResult get() = listOf(FragmentIota(this.uniqueId))
+
+inline val List<SubLevel>.asActionResult get() = listOf(ListIota(this.map {
+    FragmentIota(it.uniqueId)
+}))
 
 inline val Level.subLevelContainer get() = SubLevelContainer.getContainer(this)
 
