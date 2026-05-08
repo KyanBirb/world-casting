@@ -6,6 +6,7 @@ import at.petrak.hexcasting.api.casting.math.HexPattern;
 import dev.kyanbirb.world_casting.PlatformHelper;
 import dev.kyanbirb.world_casting.content.action.pattern.*;
 import dev.kyanbirb.world_casting.content.action.spell.OpImpulseSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
 import dev.kyanbirb.world_casting.content.action.spell.OpStoreSubLevel;
 import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
 import net.minecraft.core.Holder;
@@ -48,6 +49,12 @@ public class WorldCastingActions {
             "sub_level.assemble_radius",
             HexPattern.fromAngles("aqwqawedwd", WEST),
             new OpAssembleRadius()
+    );
+
+    public static final Holder<ActionRegistryEntry> NAME = make(
+            "sub_level.name",
+            HexPattern.fromAngles("qwqqqwqwded", NORTH_EAST),
+            OpNameSubLevel.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> STORE_SUB_LEVEL = make(

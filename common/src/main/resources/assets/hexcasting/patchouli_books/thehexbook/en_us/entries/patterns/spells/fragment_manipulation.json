@@ -16,6 +16,14 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.name",
+      "anchor": "world_casting:sub_level.name",
+      "input": "fragment",
+      "output": "",
+      "text": "world_casting.page.world_casting.sub_level.name"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.store",
       "anchor": "world_casting:sub_level.store",
       "input": "fragment, vec",

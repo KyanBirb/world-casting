@@ -30,6 +30,7 @@
   "hexcasting.action.world_casting:sub_level.mass": "Mass Purification",
   "hexcasting.action.world_casting:sub_level.impulse": "Impulse Fragment",
   "hexcasting.action.world_casting:sub_level.assemble_radius": "Fracture World",
+  "hexcasting.action.world_casting:sub_level.name": "Label Fragment",
   "hexcasting.action.world_casting:sub_level.store": "Dismiss Fragment",
   "hexcasting.action.world_casting:sub_level.recall": "Recall Fragment",
   "hexcasting.action.world_casting:sub_level.contains": "Frame Purification",
@@ -40,6 +41,7 @@
   "world_casting.page.world_casting.sub_level.mass": "Returns the total mass of the fragment.",
   "world_casting.page.world_casting.sub_level.assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
   "world_casting.page.world_casting.sub_level.impulse": "Applies an impulse to the given fragment.",
+  "world_casting.page.world_casting.sub_level.name": "Takes a fragment and sets the label to the name of the nametag in my other hand",
   "world_casting.page.world_casting.sub_level.store": "Takes a fragment and the position of a deconstructor, and stores all the blocks within the frame.",
   "world_casting.page.world_casting.sub_level.recall": "Takes the position of a deconstructor, a position, and an orientation. Creates a fragment from the blocks in the frame at that position and orientation.",
   "world_casting.page.world_casting.sub_level.contains": "Returns true if a frame contains any blocks, false otherwise."
