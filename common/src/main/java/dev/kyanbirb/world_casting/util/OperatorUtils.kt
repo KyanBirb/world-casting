@@ -2,6 +2,7 @@ package dev.kyanbirb.world_casting.util
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.ListIota
+import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import dev.kyanbirb.world_casting.content.iota.FragmentIota
@@ -19,6 +20,16 @@ fun List<Iota>.getFragment(idx: Int, argc: Int = 0): FragmentIota {
     } else {
         throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "fragment")
     }
+}
+
+fun List<Iota>.getFragmentOrNull(idx: Int, argc: Int = 0): FragmentIota? {
+    val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
+    return x as? FragmentIota
+        ?: if(x is NullIota) {
+            null
+        } else {
+            throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "fragment")
+        }
 }
 
 fun List<Iota>.getQuaternion(idx: Int, argc: Int = 0): Quaterniondc {

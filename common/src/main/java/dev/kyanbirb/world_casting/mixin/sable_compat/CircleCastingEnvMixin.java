@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.eval.env.CircleCastEnv;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.kyanbirb.world_casting.util.SubLevelUtil;
 import dev.ryanhcode.sable.Sable;
 import dev.ryanhcode.sable.sublevel.SubLevel;
 import net.minecraft.server.level.ServerLevel;
@@ -27,23 +28,8 @@ public abstract class CircleCastingEnvMixin extends CastingEnvironment {
     @WrapOperation(method = "isVecInRangeEnvironment", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;contains(Lnet/minecraft/world/phys/Vec3;)Z"))
     private boolean world_casting$isVecInRangeEnvironment(AABB instance, Vec3 vec, Operation<Boolean> original) {
         CircleExecutionState state = this.circleState();
-        ServerLevel level = this.world;
-        SubLevel thisSubLevel = Sable.HELPER.getContaining(level, state.impetusPos);
-        SubLevel otherSubLevel = Sable.HELPER.getContaining(level, vec);
-        if(thisSubLevel != otherSubLevel) {
-            if(thisSubLevel != null && otherSubLevel != null) {
-                vec = otherSubLevel.logicalPose().transformPosition(vec);
-                vec = thisSubLevel.logicalPose().transformPositionInverse(vec);
-            } else {
-                if(thisSubLevel != null) {
-                    vec = thisSubLevel.logicalPose().transformPositionInverse(vec);
-                } else {
-                    vec = otherSubLevel.logicalPose().transformPosition(vec);
-                }
-            }
-        }
-
-        return original.call(instance, vec);
+        SubLevel subLevel = Sable.HELPER.getContaining(this.world, state.impetusPos);
+        return original.call(instance, SubLevelUtil.projectInto(this.world, vec, subLevel));
     }
 
 }

@@ -39,6 +39,12 @@ public class WorldCastingActions {
             new OpGetMass()
     );
 
+    public static final Holder<ActionRegistryEntry> PROJECT_POSITION = make(
+            "sub_level.project_position",
+            HexPattern.fromAngles("eeeeewqqqqq", NORTH_EAST),
+            new OpProjectPosition()
+    );
+
     public static final Holder<ActionRegistryEntry> IMPULSE_SUB_LEVEL = make(
             "sub_level.impulse",
             HexPattern.fromAngles("dweeewdew", NORTH_WEST),
