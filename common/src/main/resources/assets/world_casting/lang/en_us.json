@@ -24,8 +24,7 @@
 
   "world_casting.entry.fragment_manipulation": "Fragment Manipulation",
 
-  "hexcasting.action.world_casting:sub_level.get_block": "Fragment Purification",
-  "hexcasting.action.world_casting:sub_level.get_entity": "Fragment Purification",
+  "hexcasting.action.world_casting:sub_level.get_containing": "Fragment Purification",
   "hexcasting.action.world_casting:sub_level.get_radius": "Zone Distillation: Fragment",
   "hexcasting.action.world_casting:sub_level.mass": "Mass Purification",
   "hexcasting.action.world_casting:sub_level.project_position": "Projection Distillation",
@@ -36,8 +35,7 @@
   "hexcasting.action.world_casting:sub_level.recall": "Recall Fragment",
   "hexcasting.action.world_casting:sub_level.contains": "Frame Purification",
 
-  "world_casting.page.world_casting.sub_level.get_block": "Removes a position from the stack and returns the fragment that contains it (or null).",
-  "world_casting.page.world_casting.sub_level.get_entity": "Removes an entity from the stack and returns the fragment it's standing on (or null).",
+  "world_casting.page.world_casting.sub_level.get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
   "world_casting.page.world_casting.sub_level.get_radius": "Takes a position and a radius, returns every fragment within the radius",
   "world_casting.page.world_casting.sub_level.mass": "Returns the total mass of the fragment.",
   "world_casting.page.world_casting.sub_level.project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",

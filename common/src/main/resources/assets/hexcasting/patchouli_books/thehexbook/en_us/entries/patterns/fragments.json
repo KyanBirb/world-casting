@@ -16,19 +16,11 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.get_block",
-      "anchor": "world_casting:sub_level.get_block",
-      "input": "vec",
+      "op_id": "world_casting:sub_level.get_containing",
+      "anchor": "world_casting:sub_level.get_containing",
+      "input": "vec | entity",
       "output": "fragment or null",
-      "text": "world_casting.page.world_casting.sub_level.get_block"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.get_entity",
-      "anchor": "world_casting:sub_level.get_entity",
-      "input": "entity",
-      "output": "fragment or null",
-      "text": "world_casting.page.world_casting.sub_level.get_entity"
+      "text": "world_casting.page.world_casting.sub_level.get_containing"
     },
     {
       "type": "hexcasting:pattern",
@@ -50,7 +42,7 @@
       "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.project_position",
       "anchor": "world_casting:sub_level.project_position",
-      "input": "vec, fragment|null",
+      "input": "vec, fragment | null",
       "output": "vec",
       "text": "world_casting.page.world_casting.sub_level.project_position"
     },

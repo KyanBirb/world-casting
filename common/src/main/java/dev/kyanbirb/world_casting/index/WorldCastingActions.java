@@ -16,9 +16,9 @@ import static at.petrak.hexcasting.api.casting.math.HexDir.*;
 
 public class WorldCastingActions {
     public static final Holder<ActionRegistryEntry> GET_SUB_LEVEL = make(
-            "sub_level.get_block",
+            "sub_level.get_containing",
             HexPattern.fromAngles("edeeeede", SOUTH_EAST),
-            new OpGetSubLevelAt()
+            new OpGetContaining()
     );
 
     public static final Holder<ActionRegistryEntry> GET_ENTITY_SUB_LEVEL = make(
