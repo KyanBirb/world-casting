@@ -5,8 +5,8 @@ import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
+import dev.kyanbirb.world_casting.WorldCasting
 import dev.kyanbirb.world_casting.content.iota.FragmentIota
-import dev.kyanbirb.world_casting.content.iota.QuaternionIota
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer
 import dev.ryanhcode.sable.sublevel.SubLevel
 import net.minecraft.world.level.Level
@@ -34,8 +34,8 @@ fun List<Iota>.getFragmentOrNull(idx: Int, argc: Int = 0): FragmentIota? {
 
 fun List<Iota>.getQuaternion(idx: Int, argc: Int = 0): Quaterniondc {
     val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
-    if (x is QuaternionIota) {
-        return x.quaternion
+    if (WorldCasting.QUATERNION_PROVIDER.isQuaternion(x)) {
+        return WorldCasting.QUATERNION_PROVIDER.getQuaternion(x)
     } else {
         throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "quaternion")
     }
@@ -49,4 +49,4 @@ inline val List<SubLevel>.asActionResult get() = listOf(ListIota(this.map {
 
 inline val Level.subLevelContainer get() = SubLevelContainer.getContainer(this)
 
-inline val Quaterniond.asActionResult get() = listOf(QuaternionIota(this))
+inline val Quaterniond.asActionResult get() = listOf(WorldCasting.QUATERNION_PROVIDER.createIota(this))

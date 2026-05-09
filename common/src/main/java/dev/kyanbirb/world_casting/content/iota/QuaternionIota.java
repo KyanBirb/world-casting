@@ -3,6 +3,7 @@ package dev.kyanbirb.world_casting.content.iota;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import com.mojang.serialization.MapCodec;
+import dev.kyanbirb.world_casting.WorldCasting;
 import dev.kyanbirb.world_casting.index.WorldCastingIotaTypes;
 import dev.kyanbirb.world_casting.util.CodecUtil;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -12,8 +13,8 @@ import org.joml.Quaterniond;
 import org.joml.Quaterniondc;
 
 public class QuaternionIota extends Iota {
-    public static final QuaternionIota IDENTITY =
-            new QuaternionIota(new Quaterniond());
+    public static final Iota IDENTITY =
+            WorldCasting.QUATERNION_PROVIDER.createIota(new Quaterniond());
 
     private final Quaterniondc quaternion;
 
