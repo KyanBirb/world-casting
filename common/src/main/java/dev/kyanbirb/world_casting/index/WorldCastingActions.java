@@ -87,10 +87,10 @@ public class WorldCastingActions {
             Action.makeConstantOp(QuaternionIota.IDENTITY)
     );
 
-    public static final Holder<ActionRegistryEntry> ENTITY_ORIENTATION = make(
-            "quaternion.entity_orientation",
+    public static final Holder<ActionRegistryEntry> ORIENTATION = make(
+            "quaternion.orientation",
             HexPattern.fromAngles("waa", EAST),
-            new OpGetEntityOrientation()
+            new OpGetOrientation()
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_ROTATION_X = make(

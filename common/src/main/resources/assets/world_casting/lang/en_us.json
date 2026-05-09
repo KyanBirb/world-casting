@@ -4,7 +4,7 @@
   "world_casting.page.quaternions.2": "the most important things to note are:$(br2)- A quaternion represents an orientation.$(br2)- Quaternions can be rotated by multiplying them together. The space of the operation depends on the order$(br)(eg. a * b rotates \"a\" locally by \"b\", and the opposite rotates it globally).$(br2)- they look scary but they don't bite i promise",
 
   "hexcasting.action.world_casting:quaternion.identity": "Identity Reflection",
-  "hexcasting.action.world_casting:quaternion.entity_orientation": "Orientation Purification",
+  "hexcasting.action.world_casting:quaternion.orientation": "Orientation Purification",
   "hexcasting.action.world_casting:quaternion.rotation_x": "Rotation Purification +X",
   "hexcasting.action.world_casting:quaternion.rotation_y": "Rotation Purification +Y",
   "hexcasting.action.world_casting:quaternion.rotation_z": "Rotation Purification +Z",
@@ -12,7 +12,7 @@
   "world_casting.entry.quaternion_math": "Quaternion Operations",
 
   "world_casting.page.world_casting.quaternion.identity": "Returns a quaternion that represents no rotation (upright, facing north).",
-  "world_casting.page.world_casting.quaternion.entity_orientation": "Returns a quaternion that represents the orientation of an entity.",
+  "world_casting.page.world_casting.quaternion.orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
   "world_casting.page.world_casting.quaternion.mul": "Removes a quaternion from the top of the stack and rotates the following quaternion by it.",
   "world_casting.page.world_casting.quaternion.rotation_x": "Transform the number on the stack into a quaternion representing a rotation around X by that angle.",
   "world_casting.page.world_casting.quaternion.rotation_y": "Transform the number on the stack into a quaternion representing a rotation around Y by that angle.",
