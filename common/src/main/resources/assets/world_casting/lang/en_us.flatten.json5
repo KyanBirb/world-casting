@@ -1,0 +1,64 @@
+{
+  "hexcasting.action.world_casting:": {
+    "sub_level": {
+      "get_containing": "Fragment Purification",
+      "get_radius": "Zone Distillation: Fragment",
+      "mass": "Mass Purification",
+      "project_position": "Projection Distillation",
+
+      "impulse": "Impulse Fragment",
+      "assemble_radius": "Fracture World",
+      "name": "Label Fragment",
+      "store": "Dismiss Fragment",
+      "recall": "Recall Fragment",
+      "contains": "Frame Purification"
+    },
+
+    "quaternion": {
+      "identity": "Identity Purification",
+      "orientation": "Orientation Purification",
+      "rotation_x": "Rotation Purification +X",
+      "rotation_y": "Rotation Purification +Y",
+      "rotation_z": "Rotation Purification +Z"
+    }
+  },
+
+  "world_casting.entry": {
+    "quaternions": "Quaternions",
+    "quaternion_math": "Quaternion Operations",
+    "fragments": "Fragments",
+    "fragment_manipulation": "Fragment Manipulation"
+  },
+
+  "world_casting.page": {
+    "quaternions": {
+      "1": "i don't currently have the capacity to explain this in depth so the 3b1b video will have to do for now:",
+      "2": "the most important things to note are:$(br2)- A quaternion represents an orientation.$(br2)- Quaternions can be rotated by multiplying them together. The space of the operation depends on the order$(br)(eg. a * b rotates \"a\" locally by \"b\", and the opposite rotates it globally).$(br2)- they look scary but they don't bite i promise"
+    },
+    "world_casting.quaternion": {
+      "identity": "Returns a quaternion that represents no rotation (upright, facing north).",
+      "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
+      "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion by it.",
+      "rotation_x": "Transform the number on the stack into a quaternion representing a rotation around X by that angle.",
+      "rotation_y": "Transform the number on the stack into a quaternion representing a rotation around Y by that angle.",
+      "rotation_z": "Transform the number on the stack into a quaternion representing a rotation around Z by that angle."
+    },
+
+    "fragments": {
+      "1": "Fragments are separated sections of the world capable of moving independently. They can fall, roll around, and collide with things all while everything in them behaves as it would in the rest of the world.$(br)Hexes can interact with them normally as well.",
+      "2": "When working with coordinates inside the space of a fragment, they appear localized relative to an arbitrary \"center\" position. Internally, these local positions are very large vectors and still behave like them when operated on."
+    },
+    "world_casting.sub_level": {
+      "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
+      "get_radius": "Takes a position and a radius, returns every fragment within the radius",
+      "mass": "Returns the total mass of the fragment.",
+      "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
+      "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
+      "impulse": "Applies an impulse to the given fragment.",
+      "name": "Takes a fragment and sets the label to the name of the nametag in my other hand",
+      "store": "Takes a fragment and the position of a deconstructor, and stores all the blocks within the frame.",
+      "recall": "Takes the position of a deconstructor, a position, and an orientation. Creates a fragment from the blocks in the frame at that position and orientation.",
+      "contains": "Returns true if a frame contains any blocks, false otherwise."
+    }
+  }
+}

@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
+    id "at.petra-k.pkpcpbp.PKJson5Plugin"
 }
 
 neoForge {

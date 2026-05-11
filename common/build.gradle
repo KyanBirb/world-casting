@@ -1,6 +1,13 @@
 plugins {
     id 'multiloader-common'
     id 'net.neoforged.moddev'
+    id "at.petra-k.pkpcpbp.PKJson5Plugin"
+}
+
+
+pkJson5 {
+    autoProcessJson5 = true
+    autoProcessJson5Flattening = true
 }
 
 neoForge {
