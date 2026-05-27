@@ -210,10 +210,6 @@ public class DeconstructorBlockEntity extends BlockEntity {
     }
 
     public void storeSubLevel(ServerSubLevel subLevel) {
-        DimensionPhysics dimensionPhysics = DimensionPhysicsData.of(subLevel.getLevel());
-        JsonElement orThrow = DimensionPhysics.CODEC.encodeStart(JsonOps.INSTANCE, dimensionPhysics).getOrThrow();
-        System.out.println(orThrow);
-
         AABB frame = getFrame(getBlockPos());
         if(frame == null) return;
         if(!(getLevel() instanceof ServerLevel serverLevel)) return;
