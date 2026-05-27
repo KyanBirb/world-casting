@@ -1,4 +1,4 @@
-package dev.kyanbirb.world_casting.content.action.pattern
+package dev.kyanbirb.world_casting.content.action.pattern.sub_level
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment

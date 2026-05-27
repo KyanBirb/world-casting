@@ -1,9 +1,8 @@
-package dev.kyanbirb.world_casting.content.action.pattern
+package dev.kyanbirb.world_casting.content.action.pattern.quaternion
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getEntity
-import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import dev.kyanbirb.world_casting.content.iota.FragmentIota
 import dev.kyanbirb.world_casting.util.asActionResult
