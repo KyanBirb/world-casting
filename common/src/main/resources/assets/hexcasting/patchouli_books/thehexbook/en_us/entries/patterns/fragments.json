@@ -40,6 +40,14 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.pos",
+      "anchor": "world_casting:sub_level.pos",
+      "input": "fragment",
+      "output": "vec",
+      "text": "world_casting.page.world_casting.sub_level.pos"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.project_position",
       "anchor": "world_casting:sub_level.project_position",
       "input": "vec, fragment | null",

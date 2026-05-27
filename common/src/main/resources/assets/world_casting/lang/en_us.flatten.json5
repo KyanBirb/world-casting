@@ -4,6 +4,7 @@
       "get_containing": "Fragment Purification",
       "get_radius": "Zone Distillation: Fragment",
       "mass": "Mass Purification",
+      "pos": "Location Purification",
       "project_position": "Projection Distillation",
 
       "impulse": "Impulse Fragment",
@@ -52,6 +53,7 @@
       "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
       "get_radius": "Takes a position and a radius, returns every fragment within the radius",
       "mass": "Returns the total mass of the fragment.",
+      "pos": "Returns the position of the center of mass for the fragment.",
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
       "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
       "impulse": "Applies an impulse to the given fragment.",

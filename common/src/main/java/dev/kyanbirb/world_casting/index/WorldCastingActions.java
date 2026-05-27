@@ -39,6 +39,12 @@ public class WorldCastingActions {
             new OpGetMass()
     );
 
+    public static final Holder<ActionRegistryEntry> GET_POS = make(
+            "sub_level.pos",
+            HexPattern.fromAngles("qaaqdee", EAST),
+            new OpGetSubLevelPos()
+    );
+
     public static final Holder<ActionRegistryEntry> PROJECT_POSITION = make(
             "sub_level.project_position",
             HexPattern.fromAngles("eeeeewqqqqq", NORTH_EAST),
@@ -51,7 +57,7 @@ public class WorldCastingActions {
             OpImpulseSubLevel.INSTANCE
     );
 
-    public static final Holder<ActionRegistryEntry> ASSMBLE_RADIUS = make(
+    public static final Holder<ActionRegistryEntry> ASSEMBLE_RADIUS = make(
             "sub_level.assemble_radius",
             HexPattern.fromAngles("aqwqawedwd", WEST),
             new OpAssembleRadius()
@@ -110,8 +116,6 @@ public class WorldCastingActions {
             HexPattern.fromAngles("qqawwd", NORTH_WEST),
             new OpQuaternionRotation(Quaterniond::rotationZ)
     );
-
-
 
     private static Holder<ActionRegistryEntry> make(String id, HexPattern pattern, Action action) {
         return PlatformHelper.registerAction(id, () -> new ActionRegistryEntry(pattern, action));
