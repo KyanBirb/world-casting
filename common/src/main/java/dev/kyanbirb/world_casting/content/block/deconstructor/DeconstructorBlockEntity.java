@@ -277,7 +277,7 @@ public class DeconstructorBlockEntity extends BlockEntity {
 
         if(list.isEmpty()) return null;
 
-        return SubLevelAssemblyHelper.assembleBlocks((ServerLevel) getLevel(), BlockPos.containing(frame.getCenter()), list, new BoundingBox3i((int) frame.minX, (int) frame.minY, (int) frame.minZ, (int) frame.maxX - 1, (int) frame.maxY - 1, (int) frame.maxZ - 1));
+        return SubLevelAssemblyHelper.assembleBlocks((ServerLevel) getLevel(), BlockPos.containing(frame.getCenter()), list, new BoundingBox3i((int) frame.minX + 1, (int) frame.minY + 1, (int) frame.minZ + 1, (int) frame.maxX - 2, (int) frame.maxY - 2, (int) frame.maxZ - 2));
     }
 
 }
