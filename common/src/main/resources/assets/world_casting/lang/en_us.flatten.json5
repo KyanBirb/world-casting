@@ -39,6 +39,7 @@
     "world_casting.quaternion": {
       "identity": "Returns a quaternion that represents no rotation (upright, facing north).",
       "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
+      "conjugate": "Takes a quaternion and returns its conjugate (inverse)",
       "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion by it.",
       "rotation_x": "Transform the number on the stack into a quaternion representing a rotation around X by that angle.",
       "rotation_y": "Transform the number on the stack into a quaternion representing a rotation around Y by that angle.",
