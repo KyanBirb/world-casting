@@ -8,6 +8,7 @@
       "project_position": "Projection Distillation",
 
       "impulse": "Impulse Fragment",
+      "place": "Place Fragment",
       "assemble_radius": "Fracture World",
       "name": "Label Fragment",
       "store": "Dismiss Fragment",
@@ -56,6 +57,7 @@
       "mass": "Returns the total mass of the fragment.",
       "pos": "Returns the position of the center of mass for the fragment.",
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
+      "place": "Takes a position and orientation, and places a block from the inventory as a fragment",
       "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
       "impulse": "Applies an impulse to the given fragment.",
       "name": "Takes a fragment and sets the label to the name of the nametag in my other hand",

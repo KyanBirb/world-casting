@@ -60,6 +60,12 @@ public class WorldCastingActions {
             OpImpulseSubLevel.INSTANCE
     );
 
+    public static final Holder<ActionRegistryEntry> PLACE_SUB_LEVEL = make(
+            "sub_level.place",
+            HexPattern.fromAngles("qqqqqaq", SOUTH_WEST),
+            new OpPlaceSubLevel()
+    );
+
     public static final Holder<ActionRegistryEntry> ASSEMBLE_RADIUS = make(
             "sub_level.assemble_radius",
             HexPattern.fromAngles("aqwqawedwd", WEST),
