@@ -30,7 +30,8 @@ public class FabricPlatformHelper implements PlatformHelper {
 
     @Override
     public <T> Holder<T> register(Registry<T> registry, String id, Supplier<T> supplier) {
-        return Holder.direct(Registry.register(registry, path(id), supplier.get()));
+        T value = Registry.register(registry, path(id), supplier.get());
+        return registry.getHolder(registry.getId(value)).orElseThrow();
     }
 
 }

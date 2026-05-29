@@ -53,8 +53,7 @@ public class QuaternionIota extends Iota {
         return quaternion;
     }
 
-    public static final IotaType<QuaternionIota> TYPE = new IotaType<>() {
-
+    public static class Type extends IotaType<QuaternionIota> {
         @Override
         public MapCodec<QuaternionIota> codec() {
             return CodecUtil.QUATERNIONDC.xmap(
@@ -75,6 +74,5 @@ public class QuaternionIota extends Iota {
         public int color() {
             return 0xffff8d4c;
         }
-
-    };
+    }
 }

@@ -67,7 +67,7 @@ public class FragmentIota extends Iota {
                 centerBlock = ": [item" + ":" + itemId + "]";
             }
         }
-        MutableComponent display = component.withColor(TYPE.color());
+        MutableComponent display = component.withColor(WorldCastingIotaTypes.FRAGMENT.value().color());
         if(centerBlock != null) {
             display.append(centerBlock);
         }
@@ -91,7 +91,7 @@ public class FragmentIota extends Iota {
         return (ClientSubLevel) SubLevelContainer.getContainer(SableDistUtil.getClientLevel()).getSubLevel(getSubLevelId());
     }
 
-    public static final IotaType<FragmentIota> TYPE = new IotaType<>() {
+    public static class Type extends IotaType<FragmentIota> {
 
         @Override
         public MapCodec<FragmentIota> codec() {
@@ -114,6 +114,6 @@ public class FragmentIota extends Iota {
             return container != null && container.getSubLevel(iota.subLevelId) != null;
         }
 
-    };
+    }
 
 }

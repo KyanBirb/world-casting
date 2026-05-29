@@ -19,7 +19,7 @@ dependencies {
         exclude group: "foundry.veil"
     }
 
-    modApi("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}")
+    modImplementation("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_version}")
 
     // Common
     modImplementation("vazkii.patchouli:Patchouli:$minecraft_version-$patchouli_version-FABRIC")

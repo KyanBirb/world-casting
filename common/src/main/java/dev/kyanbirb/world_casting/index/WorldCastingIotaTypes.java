@@ -9,10 +9,10 @@ import net.minecraft.core.Holder;
 public class WorldCastingIotaTypes {
 
     public static final Holder<IotaType<FragmentIota>> FRAGMENT = PlatformHelper
-            .registerIotaType("fragment", () -> FragmentIota.TYPE);
+            .registerIotaType("fragment", FragmentIota.Type::new);
 
     public static final Holder<IotaType<QuaternionIota>> QUATERNION = PlatformHelper
-            .registerIotaType("quaternion", () -> QuaternionIota.TYPE);
+            .registerIotaType("quaternion", QuaternionIota.Type::new);
 
     public static void init() {
 
