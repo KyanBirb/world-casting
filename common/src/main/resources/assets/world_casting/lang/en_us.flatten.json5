@@ -19,6 +19,7 @@
     "quaternion": {
       "identity": "Identity Purification",
       "orientation": "Orientation Purification",
+      "conjugate": "Conjugate Purification",
       "axis_angle": "Axial Distillation",
     }
   },
