@@ -40,27 +40,11 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:quaternion.rotation_x",
-      "anchor": "world_casting:quaternion.rotation_x",
-      "input": "num",
+      "op_id": "world_casting:quaternion.axis_angle",
+      "anchor": "world_casting:quaternion.axis_angle",
+      "input": "vec, num",
       "output": "qtrn",
-      "text": "world_casting.page.world_casting.quaternion.rotation_x"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:quaternion.rotation_y",
-      "anchor": "world_casting:quaternion.rotation_y",
-      "input": "num",
-      "output": "qtrn",
-      "text": "world_casting.page.world_casting.quaternion.rotation_y"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:quaternion.rotation_z",
-      "anchor": "world_casting:quaternion.rotation_z",
-      "input": "num",
-      "output": "qtrn",
-      "text": "world_casting.page.world_casting.quaternion.rotation_z"
+      "text": "world_casting.page.world_casting.quaternion.axis_angle"
     }
   ]
 }

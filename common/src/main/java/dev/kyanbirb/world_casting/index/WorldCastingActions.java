@@ -4,16 +4,15 @@ import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.api.casting.castables.Action;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import dev.kyanbirb.world_casting.PlatformHelper;
+import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpAxisAngle;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpConjugate;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpGetOrientation;
-import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpQuaternionRotation;
 import dev.kyanbirb.world_casting.content.action.pattern.sub_level.*;
-import dev.kyanbirb.world_casting.content.action.spell.OpPush;
 import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.OpPush;
 import dev.kyanbirb.world_casting.content.action.spell.OpStoreSubLevel;
 import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
 import net.minecraft.core.Holder;
-import org.joml.Quaterniond;
 
 import static at.petrak.hexcasting.api.casting.math.HexDir.*;
 
@@ -114,22 +113,10 @@ public class WorldCastingActions {
             new OpConjugate()
     );
 
-    public static final Holder<ActionRegistryEntry> QUAT_ROTATION_X = make(
-            "quaternion.rotation_x",
-            HexPattern.fromAngles("qqawwa", NORTH_WEST),
-            new OpQuaternionRotation(Quaterniond::rotationX)
-    );
-
-    public static final Holder<ActionRegistryEntry> QUAT_ROTATION_Y = make(
-            "quaternion.rotation_y",
-            HexPattern.fromAngles("qqawww", NORTH_WEST),
-            new OpQuaternionRotation(Quaterniond::rotationY)
-    );
-
-    public static final Holder<ActionRegistryEntry> QUAT_ROTATION_Z = make(
-            "quaternion.rotation_z",
-            HexPattern.fromAngles("qqawwd", NORTH_WEST),
-            new OpQuaternionRotation(Quaterniond::rotationZ)
+    public static final Holder<ActionRegistryEntry> QUAT_AXIS_ANGLE = make(
+            "quaternion.axis_angle",
+            HexPattern.fromAngles("adqqqqqdaaww", NORTH_WEST),
+            new OpAxisAngle()
     );
 
     private static Holder<ActionRegistryEntry> make(String id, HexPattern pattern, Action action) {

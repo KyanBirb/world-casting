@@ -18,7 +18,6 @@ class OpGetOrientation : ConstMediaAction {
     override val argc: Int
         get() = 1
 
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         if (args[0] is FragmentIota) {
             val fragment = args.getFragment(0, argc)
