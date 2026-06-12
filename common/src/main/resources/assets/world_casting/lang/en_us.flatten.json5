@@ -7,7 +7,7 @@
       "pos": "Location Purification",
       "project_position": "Projection Distillation",
 
-      "impulse": "Impulse Fragment",
+      "push": "Push",
       "place": "Place Fragment",
       "assemble_radius": "Fracture World",
       "name": "Label Fragment",
@@ -24,6 +24,8 @@
       "rotation_z": "Rotation Purification +Z"
     }
   },
+
+  "hexcasting.mishap.location_fragment": "Expected a position within a fragment but got %s instead",
 
   "world_casting.entry": {
     "quaternions": "Quaternions",
@@ -59,7 +61,7 @@
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
       "place": "Takes a position and orientation, and places a block from the inventory as a fragment",
       "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created.",
-      "impulse": "Applies an impulse to the given fragment.",
+      "push": "Remove a position and a direction from the stack, and apply a force at the position if it is within a fragment. Costs units of Amethyst dust equal to the length of the direction.",
       "name": "Takes a fragment and sets the label to the name of the nametag in my other hand",
       "store": "Takes a fragment and the position of a deconstructor, and stores all the blocks within the frame.",
       "recall": "Takes the position of a deconstructor, a position, and an orientation. Creates a fragment from the blocks in the frame at that position and orientation.",

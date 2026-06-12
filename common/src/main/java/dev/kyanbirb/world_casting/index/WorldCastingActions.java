@@ -8,7 +8,7 @@ import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpConjugate;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpGetOrientation;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpQuaternionRotation;
 import dev.kyanbirb.world_casting.content.action.pattern.sub_level.*;
-import dev.kyanbirb.world_casting.content.action.spell.OpImpulseSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.OpPush;
 import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
 import dev.kyanbirb.world_casting.content.action.spell.OpStoreSubLevel;
 import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
@@ -54,10 +54,10 @@ public class WorldCastingActions {
             new OpProjectPosition()
     );
 
-    public static final Holder<ActionRegistryEntry> IMPULSE_SUB_LEVEL = make(
-            "sub_level.impulse",
-            HexPattern.fromAngles("dweeewdew", NORTH_WEST),
-            OpImpulseSubLevel.INSTANCE
+    public static final Holder<ActionRegistryEntry> PUSH_SUB_LEVEL = make(
+            "sub_level.push",
+            HexPattern.fromAngles("qwqqqeaw", NORTH_EAST),
+            OpPush.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> PLACE_SUB_LEVEL = make(

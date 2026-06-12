@@ -8,11 +8,11 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.impulse",
-      "anchor": "world_casting:sub_level.impulse",
+      "op_id": "world_casting:sub_level.push",
+      "anchor": "world_casting:sub_level.push",
       "input": "fragment, vec",
       "output": "",
-      "text": "world_casting.page.world_casting.sub_level.impulse"
+      "text": "world_casting.page.world_casting.sub_level.push"
     },
     {
       "type": "hexcasting:pattern",
