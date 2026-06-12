@@ -42,7 +42,7 @@
       "identity": "Returns a quaternion that represents no rotation (upright, facing north).",
       "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
       "conjugate": "Takes a quaternion and returns its conjugate (inverse)",
-      "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion by it.",
+      "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion or vector by it.",
       "axis_angle": "Removes a direction and an angle from the stack, and returns a quaternion that represents a rotation by the angle around the axis of the direction",
     },
 

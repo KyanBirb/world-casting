@@ -11,7 +11,6 @@ import dev.ryanhcode.sable.Sable
 import dev.ryanhcode.sable.companion.math.BoundingBox3d
 import dev.ryanhcode.sable.companion.math.JOMLConversion
 import net.minecraft.core.Position
-import net.minecraft.world.phys.AABB
 
 class OpGetSubLevels : ConstMediaAction {
     override val argc = 2
