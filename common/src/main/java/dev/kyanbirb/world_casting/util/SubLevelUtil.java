@@ -57,7 +57,6 @@ public class SubLevelUtil {
     public static ServerSubLevel assembleRadius(ServerLevel level, BlockPos center, int radius) {
         List<BlockPos> toAssemble = new ArrayList<>();
 
-
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos().set(center);
         for (int z = -radius; z < radius; z++) {
             for (int y = -radius; y < radius; y++) {
@@ -76,5 +75,11 @@ public class SubLevelUtil {
         BlockPos max = new BlockPos(radius, radius, radius);
 
         return SubLevelAssemblyHelper.assembleBlocks(level, center, toAssemble, new BoundingBox3i(min, max));
+    }
+
+    public static double distanceToSubLevel(Vec3 pos, SubLevel subLevel) {
+        Level level = subLevel.getLevel();
+        Vec3 projected = projectInto(level, pos, subLevel);
+        return Math.sqrt(subLevel.getPlot().getBoundingBox().toAABB().distanceToSqr(projected));
     }
 }

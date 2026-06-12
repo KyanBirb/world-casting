@@ -5,11 +5,13 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getPositiveDouble
 import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
+import dev.kyanbirb.world_casting.util.SubLevelUtil
 import dev.kyanbirb.world_casting.util.asActionResult
 import dev.ryanhcode.sable.Sable
 import dev.ryanhcode.sable.companion.math.BoundingBox3d
 import dev.ryanhcode.sable.companion.math.JOMLConversion
 import net.minecraft.core.Position
+import net.minecraft.world.phys.AABB
 
 class OpGetSubLevels : ConstMediaAction {
     override val argc = 2
@@ -24,6 +26,8 @@ class OpGetSubLevels : ConstMediaAction {
         val box = BoundingBox3d(min, max)
         val subLevels = Sable.HELPER.getAllIntersecting(env.world, box).sortedBy {
             Sable.HELPER.distanceSquaredWithSubLevels(env.world, JOMLConversion.toJOML(pos), it.logicalPose().position())
+        }.filter {
+            SubLevelUtil.distanceToSubLevel(pos, it) <= radius
         }
 
         return subLevels.asActionResult
