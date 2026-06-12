@@ -24,27 +24,19 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.store",
-      "anchor": "world_casting:sub_level.store",
-      "input": "fragment, vec",
-      "output": "",
-      "text": "world_casting.page.world_casting.sub_level.store"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.recall",
-      "anchor": "world_casting:sub_level.recall",
-      "input": "vec, vec, qtrn",
+      "op_id": "world_casting:sub_level.place",
+      "anchor": "world_casting:sub_level.place",
+      "input": "vec, qtrn",
       "output": "fragment",
-      "text": "world_casting.page.world_casting.sub_level.recall"
+      "text": "world_casting.page.world_casting.sub_level.place"
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.contains",
-      "anchor": "world_casting:sub_leveel.contains",
-      "input": "vec",
-      "output": "bool",
-      "text": "world_casting.page.world_casting.sub_level.contains"
+      "op_id": "world_casting:sub_level.assemble_radius",
+      "anchor": "world_casting:sub_level.assemble_radius",
+      "input": "vec, num",
+      "output": "fragment",
+      "text": "world_casting.page.world_casting.sub_level.assemble_radius"
     }
   ]
 }
