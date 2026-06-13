@@ -8,9 +8,7 @@ import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpAxisAngle;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpConjugate;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpGetOrientation;
 import dev.kyanbirb.world_casting.content.action.pattern.sub_level.*;
-import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
-import dev.kyanbirb.world_casting.content.action.spell.OpPush;
-import dev.kyanbirb.world_casting.content.action.spell.OpStoreSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.*;
 import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
 import net.minecraft.core.Holder;
 
@@ -62,13 +60,13 @@ public class WorldCastingActions {
     public static final Holder<ActionRegistryEntry> PLACE_SUB_LEVEL = make(
             "sub_level.place",
             HexPattern.fromAngles("qqqqqaq", SOUTH_WEST),
-            new OpPlaceSubLevel()
+            OpPlaceSubLevel.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> ASSEMBLE_RADIUS = make(
             "sub_level.assemble_radius",
             HexPattern.fromAngles("aqwqawedwd", WEST),
-            new OpAssembleRadius()
+            OpAssembleRadius.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> NAME = make(
