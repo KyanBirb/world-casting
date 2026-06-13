@@ -8,8 +8,8 @@
     "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/KyanBirb/world-casting",
+    "sources": "https://github.com/KyanBirb/world-casting"
   },
   "license": "${license}",
   "icon": "${mod_id}.png",
@@ -30,9 +30,7 @@
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "java": ">=${java_version}"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "java": ">=${java_version}",
+    "sable": ">=${sable_min_version} <${sable_max_version}"
   }
 }
