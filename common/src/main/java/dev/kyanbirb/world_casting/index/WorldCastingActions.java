@@ -8,7 +8,10 @@ import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpAxisAngle;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpConjugate;
 import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpGetOrientation;
 import dev.kyanbirb.world_casting.content.action.pattern.sub_level.*;
-import dev.kyanbirb.world_casting.content.action.spell.*;
+import dev.kyanbirb.world_casting.content.action.spell.OpAssembleRadius;
+import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.OpPlaceSubLevel;
+import dev.kyanbirb.world_casting.content.action.spell.OpPush;
 import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
 import net.minecraft.core.Holder;
 
@@ -73,24 +76,6 @@ public class WorldCastingActions {
             "sub_level.name",
             HexPattern.fromAngles("qwqqqwqwded", NORTH_EAST),
             OpNameSubLevel.INSTANCE
-    );
-
-    public static final Holder<ActionRegistryEntry> STORE_SUB_LEVEL = make(
-            "sub_level.store",
-            HexPattern.fromAngles("edade", NORTH_WEST),
-            OpStoreSubLevel.INSTANCE
-    );
-
-    public static final Holder<ActionRegistryEntry> RECALL_SUB_LEVEL = make(
-            "sub_level.recall",
-            HexPattern.fromAngles("qadaq", NORTH_EAST),
-            new OpRecallSubLevel()
-    );
-
-    public static final Holder<ActionRegistryEntry> CONTAINS_SUB_LEVEL = make(
-            "sub_level.contains",
-            HexPattern.fromAngles("edadee", NORTH_WEST),
-            new OpContainsSubLevel()
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_IDENTITY = make(

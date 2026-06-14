@@ -1,7 +1,7 @@
 {
   "name": "world_casting.entry.fragment_manipulation",
   "category": "hexcasting:patterns/spells",
-  "icon": "world_casting:frame",
+  "icon": "minecraft:amethyst_block",
   "sortnum": 1,
   "advancement": "hexcasting:root",
   "read_by_default": true,
