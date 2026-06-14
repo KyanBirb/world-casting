@@ -9,6 +9,7 @@ import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.sublevel.ClientSubLevel;
 import dev.ryanhcode.sable.sublevel.SubLevel;
 import dev.ryanhcode.sable.util.SableDistUtil;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -19,6 +20,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.UUID;
 
@@ -51,7 +53,7 @@ public class FragmentIota extends Iota {
         return display(subLevel);
     }
 
-    public static Component display(ClientSubLevel subLevel) {
+    public static Component display(SubLevel subLevel) {
         MutableComponent component = Component.literal("Fragment");
         String centerBlock = null;
         if(subLevel == null) {
@@ -114,6 +116,13 @@ public class FragmentIota extends Iota {
             return container != null && container.getSubLevel(iota.subLevelId) != null;
         }
 
+    }
+
+    public static Component getVec3Display(SubLevel subLevel, Vec3 pos) {
+        BlockPos center = subLevel.getPlot().getCenterBlock();
+        return Component.literal(String.format("(%.2f, %.2f, %.2f) in ", pos.x - center.getX(), pos.y - center.getY(), pos.z - center.getZ()))
+                .withStyle(ChatFormatting.RED)
+                .append(FragmentIota.display(subLevel));
     }
 
 }

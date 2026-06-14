@@ -8,11 +8,11 @@
     "sable_compat.CastingEnvironmentMixin",
     "sable_compat.CircleCastingEnvMixin",
     "sable_compat.OpEntityRaycastMixin",
-    "sable_compat.SubLevelAssemblyHelperMixin",
-    "vec_display.Vec3IotaMixin"
+    "sable_compat.SubLevelAssemblyHelperMixin"
   ],
   "client": [
-    "sable_compat.HexAdditionalRenderersMixin"
+    "sable_compat.HexAdditionalRenderersMixin",
+    "vec_display.GuiSpellcastingMixin"
   ],
   "server": [],
   "injectors": {
