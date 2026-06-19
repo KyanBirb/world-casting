@@ -21,4 +21,14 @@ public class CastingEnvironmentMixin {
     private boolean world_casting$isVecInRange(Vec3 vec, Operation<Boolean> original) {
         return original.call(Sable.HELPER.projectOutOfSubLevel(world, vec));
     }
+
+    @WrapMethod(method = "isVecInWorld")
+    private boolean world_casting$isVecInWorld(Vec3 vec, Operation<Boolean> original) {
+        boolean inWorld = original.call(vec);
+        if(inWorld && Sable.HELPER.isInPlotGrid(world, vec)) {
+            return Sable.HELPER.getContaining(world, vec) != null;
+        }
+        return inWorld;
+    }
+
 }
