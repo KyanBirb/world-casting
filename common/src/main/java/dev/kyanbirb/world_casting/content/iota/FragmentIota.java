@@ -2,14 +2,18 @@ package dev.kyanbirb.world_casting.content.iota;
 
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
+import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import com.mojang.serialization.MapCodec;
+import dev.kyanbirb.world_casting.PlatformHelper;
 import dev.kyanbirb.world_casting.index.WorldCastingIotaTypes;
 import dev.ryanhcode.sable.api.sublevel.ServerSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.sublevel.ClientSubLevel;
+import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import dev.ryanhcode.sable.sublevel.SubLevel;
 import dev.ryanhcode.sable.util.SableDistUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -49,8 +53,13 @@ public class FragmentIota extends Iota {
 
     @Override
     public Component display() {
-        ClientSubLevel subLevel = getClientSubLevel();
-        return display(subLevel);
+        if (IXplatAbstractions.INSTANCE.isPhysicalClient()) {
+            ClientSubLevel subLevel = getClientSubLevel();
+            return display(subLevel);
+        } else {
+            // sorry
+            return display(null);
+        }
     }
 
     public static Component display(SubLevel subLevel) {

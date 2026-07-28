@@ -18,7 +18,7 @@ import org.joml.Quaterniond
 import org.joml.Vector3d
 
 class OperatorQuaternionMul : OperatorBasic(2,
-    either(all(ofType(QUATERNION.value())), pair(ofType(HexIotaTypes.VEC3), ofType(QUATERNION.value())))
+    either(all(ofType(QUATERNION.value())), pair(ofType(HexIotaTypes.VEC3.get()), ofType(QUATERNION.value())))
 ) {
     override fun apply(iotas: Iterable<Iota>, env: CastingEnvironment): Iterable<Iota> {
         val it = iotas.iterator().withIndex()
