@@ -1,8 +1,8 @@
 package dev.kyanbirb.world_casting;
 
+import dev.kyanbirb.world_casting.content.iota.quaternion.DefaultQuaternionProvider;
+import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionProvider;
 import dev.kyanbirb.world_casting.index.*;
-import dev.kyanbirb.world_casting.util.quaternions.DefaultQuaternionProvider;
-import dev.kyanbirb.world_casting.util.quaternions.QuaternionProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -58,5 +58,13 @@
       "push": "Remove a position and a direction from the stack, and apply a force at the position if it is within a fragment. Costs units of Amethyst dust equal to the length of the direction.",
       "name": "Takes a fragment and sets the label to the name of the nametag in my other hand"
     }
+  },
+
+  "world_casting.display": {
+    "fragment": {
+      "generic": "Fragment",
+      "generic_block": "Fragment: %s",
+      "unknown": "An unknown fragment"
+    }
   }
 }

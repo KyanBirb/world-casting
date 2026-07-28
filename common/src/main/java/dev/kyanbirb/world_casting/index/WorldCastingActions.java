@@ -12,7 +12,7 @@ import dev.kyanbirb.world_casting.content.action.spell.OpAssembleRadius;
 import dev.kyanbirb.world_casting.content.action.spell.OpNameSubLevel;
 import dev.kyanbirb.world_casting.content.action.spell.OpPlaceSubLevel;
 import dev.kyanbirb.world_casting.content.action.spell.OpPush;
-import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
+import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionIota;
 import net.minecraft.core.Holder;
 
 import static at.petrak.hexcasting.api.casting.math.HexDir.*;

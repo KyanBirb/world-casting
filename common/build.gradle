@@ -44,7 +44,7 @@ dependencies {
 
     implementation("at.petra-k.hexcasting:hexcasting-neoforge-$minecraft_version:$hexcasting_version")
     implementation("at.petra-k:paucal:$paucal_version+$minecraft_version-common")
-    implementation("com.samsthenerd.inline:inline-common:$minecraft_version-$inline_version") { transitive = false }
+    implementation("com.samsthenerd.inline:inline-neoforge:$minecraft_version-$inline_version") { transitive = false }
     implementation("dev.architectury:architectury:$architectury_api_version") { transitive = false }
     implementation("io.wispforest:accessories-common:$accessories_version+$minecraft_version") { transitive = false }
 }

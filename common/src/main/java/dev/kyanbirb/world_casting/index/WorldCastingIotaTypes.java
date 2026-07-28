@@ -2,8 +2,8 @@ package dev.kyanbirb.world_casting.index;
 
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import dev.kyanbirb.world_casting.PlatformHelper;
-import dev.kyanbirb.world_casting.content.iota.FragmentIota;
-import dev.kyanbirb.world_casting.content.iota.QuaternionIota;
+import dev.kyanbirb.world_casting.content.iota.fragment.FragmentIota;
+import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionIota;
 import net.minecraft.core.Holder;
 
 public class WorldCastingIotaTypes {

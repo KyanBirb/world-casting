@@ -4,6 +4,8 @@ import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.utils.TreeList
+import java.util.Objects
 
 interface RenderedSpellThatReturnsSomething : RenderedSpell {
     override fun cast(
@@ -11,11 +13,9 @@ interface RenderedSpellThatReturnsSomething : RenderedSpell {
         image: CastingImage
     ): CastingImage? {
         super.cast(env, image)
-        val stack = ArrayList(image.stack)
-        stack.addAll(getReturnValue(env, image))
 
         return image.copy(
-            stack = stack,
+            stack = image.stack.appendedAll(getReturnValue(env, image)),
             parenCount = image.parenCount,
             parenthesized = image.parenthesized,
             escapeNext = image.escapeNext,

@@ -9,7 +9,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
-import dev.kyanbirb.world_casting.content.iota.QuaternionIota
+import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionIota
 import dev.kyanbirb.world_casting.index.WorldCastingIotaTypes.QUATERNION
 import dev.kyanbirb.world_casting.util.asActionResult
 import net.minecraft.network.chat.Component
@@ -18,7 +18,7 @@ import org.joml.Quaterniond
 import org.joml.Vector3d
 
 class OperatorQuaternionMul : OperatorBasic(2,
-    either(all(ofType(QUATERNION.value())), pair(ofType(HexIotaTypes.VEC3), ofType(QUATERNION.value())))
+    either(all(ofType(QUATERNION.value())), pair(ofType(HexIotaTypes.VEC3.get()), ofType(QUATERNION.value())))
 ) {
     override fun apply(iotas: Iterable<Iota>, env: CastingEnvironment): Iterable<Iota> {
         val it = iotas.iterator().withIndex()

@@ -8,7 +8,8 @@
     "sable_compat.CastingEnvironmentMixin",
     "sable_compat.CircleCastingEnvMixin",
     "sable_compat.OpEntityRaycastMixin",
-    "sable_compat.SubLevelAssemblyHelperMixin"
+    "sable_compat.SubLevelAssemblyHelperMixin",
+    "text_component.TranslatableContentsMixin"
   ],
   "client": [
     "sable_compat.HexAdditionalRenderersMixin",

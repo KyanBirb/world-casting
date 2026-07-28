@@ -6,7 +6,7 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import dev.kyanbirb.world_casting.WorldCasting
-import dev.kyanbirb.world_casting.content.iota.FragmentIota
+import dev.kyanbirb.world_casting.content.iota.fragment.FragmentIota
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer
 import dev.ryanhcode.sable.sublevel.SubLevel
 import net.minecraft.world.level.Level
