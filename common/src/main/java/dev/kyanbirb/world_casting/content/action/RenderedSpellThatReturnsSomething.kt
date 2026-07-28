@@ -11,7 +11,7 @@ interface RenderedSpellThatReturnsSomething : RenderedSpell {
         image: CastingImage
     ): CastingImage? {
         super.cast(env, image)
-        val stack = ArrayList(image.stack)
+        val stack = image.stack
         stack.addAll(getReturnValue(env, image))
 
         return image.copy(
