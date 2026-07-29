@@ -24,6 +24,7 @@
 
   "hexcasting.mishap.location_not_in_sub_level": "Expected a position within a fragment but got %s instead",
   "hexcasting.mishap.location_in_same_grid": "Expected a position within a different fragment or the world but got %s instead",
+  "hexcasting.mishap.invalid_value.class.fragment": "a fragment",
 
   "world_casting.entry": {
     "quaternions": "Quaternions",

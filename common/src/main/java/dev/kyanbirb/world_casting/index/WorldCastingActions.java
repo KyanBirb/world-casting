@@ -17,7 +17,7 @@ import static at.petrak.hexcasting.api.casting.math.HexDir.*;
 public class WorldCastingActions {
     public static final Holder<ActionRegistryEntry> GET_SUB_LEVEL = make(
             "sub_level.get_containing",
-            HexPattern.fromAngles("edeeeede", SOUTH_EAST),
+            HexPattern.fromAngles("qqaqqdee", EAST),
             new OpGetContaining()
     );
 
@@ -35,7 +35,7 @@ public class WorldCastingActions {
 
     public static final Holder<ActionRegistryEntry> GET_MASS = make(
             "sub_level.mass",
-            HexPattern.fromAngles("waawaaw", NORTH_WEST),
+            HexPattern.fromAngles("wdeeeewd", EAST),
             new OpGetMass()
     );
 

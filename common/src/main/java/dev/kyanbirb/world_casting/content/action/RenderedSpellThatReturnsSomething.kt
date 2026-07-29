@@ -4,8 +4,6 @@ import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.utils.TreeList
-import java.util.Objects
 
 interface RenderedSpellThatReturnsSomething : RenderedSpell {
     override fun cast(

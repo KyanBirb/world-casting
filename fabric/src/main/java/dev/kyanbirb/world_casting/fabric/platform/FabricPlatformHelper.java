@@ -2,11 +2,9 @@ package dev.kyanbirb.world_casting.fabric.platform;
 
 import dev.kyanbirb.world_casting.PlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;

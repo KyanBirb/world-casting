@@ -24,22 +24,6 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.get_radius",
-      "anchor": "world_casting:sub_level.get_radius",
-      "input": "vec, num",
-      "output": "[fragment]",
-      "text": "world_casting.page.world_casting.sub_level.get_radius"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.mass",
-      "anchor": "world_casting:sub_level.mass",
-      "input": "fragment",
-      "output": "num",
-      "text": "world_casting.page.world_casting.sub_level.mass"
-    },
-    {
-      "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.pos",
       "anchor": "world_casting:sub_level.pos",
       "input": "fragment",
@@ -53,6 +37,22 @@
       "input": "vec, fragment | null",
       "output": "vec",
       "text": "world_casting.page.world_casting.sub_level.project_position"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.get_radius",
+      "anchor": "world_casting:sub_level.get_radius",
+      "input": "vec, num",
+      "output": "[fragment]",
+      "text": "world_casting.page.world_casting.sub_level.get_radius"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.mass",
+      "anchor": "world_casting:sub_level.mass",
+      "input": "fragment",
+      "output": "num",
+      "text": "world_casting.page.world_casting.sub_level.mass"
     }
   ]
 }

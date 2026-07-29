@@ -2,7 +2,6 @@ package dev.kyanbirb.world_casting.mixin.text_component;
 
 import com.google.common.collect.ImmutableList;
 import dev.kyanbirb.world_casting.content.iota.fragment.FragmentIota;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import org.spongepowered.asm.mixin.Final;
