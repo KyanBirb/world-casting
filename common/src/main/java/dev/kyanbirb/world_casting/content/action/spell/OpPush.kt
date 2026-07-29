@@ -24,7 +24,7 @@ object OpPush : SpellAction {
 
         env.assertVecInRange(forcePos)
 
-        val subLevel = Sable.HELPER.getContaining(env.world, forcePos) ?: throw MishapBadLocation(forcePos, "fragment")
+        val subLevel = Sable.HELPER.getContaining(env.world, forcePos) ?: throw MishapBadLocation(forcePos, "not_in_sub_level")
         val physicsSystem = SubLevelPhysicsSystem.get(env.world)
         val physicsHandle = physicsSystem.getPhysicsHandle(subLevel as ServerSubLevel)
 

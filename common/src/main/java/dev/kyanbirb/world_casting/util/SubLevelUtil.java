@@ -2,9 +2,11 @@ package dev.kyanbirb.world_casting.util;
 
 import dev.ryanhcode.sable.Sable;
 import dev.ryanhcode.sable.api.SubLevelAssemblyHelper;
+import dev.ryanhcode.sable.api.math.OrientedBoundingBox3d;
 import dev.ryanhcode.sable.api.sublevel.ServerSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.companion.math.BoundingBox3i;
+import dev.ryanhcode.sable.companion.math.BoundingBox3ic;
 import dev.ryanhcode.sable.companion.math.Pose3d;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import dev.ryanhcode.sable.sublevel.SubLevel;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Quaterniond;
+import org.joml.Vector3d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,5 +85,20 @@ public class SubLevelUtil {
         Level level = subLevel.getLevel();
         Vec3 projected = projectInto(level, pos, subLevel);
         return Math.sqrt(subLevel.getPlot().getBoundingBox().toAABB().distanceToSqr(projected));
+    }
+
+    public static Iterable<BlockPos> plotIterator(SubLevel subLevel) {
+        BoundingBox3ic box = subLevel.getPlot().getBoundingBox();
+        if(box.equals(BoundingBox3i.EMPTY)) {
+            return List.of();
+        }
+        return BlockPos.betweenClosed(box.minX(), box.minY(), box.minZ(), box.maxX(), box.maxY(), box.maxZ());
+    }
+
+    public static double getClosestYaw(SubLevel subLevel) {
+        if(subLevel == null) return 0.0;
+        Quaterniond orientation = subLevel.logicalPose().orientation();
+        final double d = OrientedBoundingBox3d.UP.dot(new Vector3d(orientation.x(), orientation.y(), orientation.z()));
+        return 2.0 * Math.atan2(-d, orientation.w());
     }
 }
