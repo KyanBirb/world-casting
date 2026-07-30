@@ -32,6 +32,22 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.min_bounds",
+      "anchor": "world_casting:sub_level.min_bounds",
+      "input": "fragment",
+      "output": "vec",
+      "text": "world_casting.page.world_casting.sub_level.min_bounds"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.max_bounds",
+      "anchor": "world_casting:sub_level.max_bounds",
+      "input": "fragment",
+      "output": "vec",
+      "text": "world_casting.page.world_casting.sub_level.max_bounds"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "world_casting:sub_level.project_position",
       "anchor": "world_casting:sub_level.project_position",
       "input": "vec, fragment | null",

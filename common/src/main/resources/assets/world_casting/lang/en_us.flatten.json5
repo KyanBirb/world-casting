@@ -3,12 +3,14 @@
     "sub_level": {
       "get_containing": "Fragment Purification",
       "pos": "Location Purification",
+      "min_bounds": "Lesser Boundary Prfn.",
+      "max_bounds": "Greater Boundary Prfn.",
       "project_position": "Projection Distillation",
-      "get_radius": "Zone Distillation: Fragment",
+      "get_radius": "Zone Dstl.: Fragment",
       "mass": "Mass Purification",
       "gravity": "Gravity Purification",
       "velocity": "Velocity Purification",
-      "air_pressure": "Air Pressure Purification",
+      "air_pressure": "Air Pressure Prfn.",
 
       "push": "Push",
       "place": "Place Fragment",
@@ -57,6 +59,8 @@
     "world_casting.sub_level": {
       "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
       "pos": "Returns the position of the center of mass for the fragment.",
+      "min_bounds": "Returns the position of the local lower-north-west corner of the bounds of the fragment.",
+      "max_bounds": "Returns the position of the local upper-south-east corner of the bounds of the fragment.",
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
       "get_radius": "Takes a position and a radius, returns every fragment within the radius",
       "mass": "Returns the total mass of the fragment.",

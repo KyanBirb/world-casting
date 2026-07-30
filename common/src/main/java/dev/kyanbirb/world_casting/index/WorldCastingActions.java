@@ -63,6 +63,18 @@ public class WorldCastingActions {
             new OpGetSubLevelPos()
     );
 
+    public static final Holder<ActionRegistryEntry> GET_MIN_BOUNDS = make(
+            "sub_level.min_bounds",
+            HexPattern.fromAngles("aaeqawa", WEST),
+            new OpSubLevelBounds(true)
+    );
+
+    public static final Holder<ActionRegistryEntry> GET_MAX_BOUNDS = make(
+            "sub_level.max_bounds",
+            HexPattern.fromAngles("aaewaqq", EAST),
+            new OpSubLevelBounds(false)
+    );
+
     public static final Holder<ActionRegistryEntry> PROJECT_POSITION = make(
             "sub_level.project_position",
             HexPattern.fromAngles("eeeeewqqqqq", NORTH_EAST),
