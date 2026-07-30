@@ -93,10 +93,10 @@ public class WorldCastingActions {
             OpPlaceSubLevel.INSTANCE
     );
 
-    public static final Holder<ActionRegistryEntry> ASSEMBLE_RADIUS = make(
-            "sub_level.assemble_radius",
+    public static final Holder<ActionRegistryEntry> ASSEMBLE = make(
+            "sub_level.assemble",
             HexPattern.fromAngles("aqwqawedwd", WEST),
-            OpAssembleRadius.INSTANCE
+            OpAssemble.INSTANCE
     );
 
     public static final Holder<ActionRegistryEntry> MERGE = make(

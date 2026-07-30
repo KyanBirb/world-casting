@@ -32,11 +32,11 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "world_casting:sub_level.assemble_radius",
-      "anchor": "world_casting:sub_level.assemble_radius",
-      "input": "vec, num",
+      "op_id": "world_casting:sub_level.assemble",
+      "anchor": "world_casting:sub_level.assemble",
+      "input": "vec, num | vec",
       "output": "fragment",
-      "text": "world_casting.page.world_casting.sub_level.assemble_radius"
+      "text": "world_casting.page.world_casting.sub_level.assemble"
     },
     {
       "type": "hexcasting:pattern",

@@ -14,7 +14,7 @@
 
       "push": "Push",
       "place": "Place Fragment",
-      "assemble_radius": "Fracture World",
+      "assemble": "Fracture World",
       "merge": "Merge",
       "name": "Label Fragment"
     },
@@ -69,7 +69,7 @@
       "air_pressure": "Returns the air pressure of the given position.",
 
       "place": "Takes a position and orientation, and places a block from the inventory as a fragment. Costs about an eighth of one Amethyst Dust",
-      "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created. Costs one Amethyst Dust per block.",
+      "assemble": "Takes a position and either a radius or an end position. If a radius is given, makes a fragment from all blocks around the position within the radius. If an end position is given, makes a fragment from all blocks between both positions. Returns the fragment that was created. Costs one Amethyst Dust per block.",
       "merge": "Takes an anchor position inside of a fragment, and a target anchor position in either the world or another fragment. Moves all the blocks from the first fragment to the space of the target position. The cost is the amount of blocks moved + the distance between the anchors in Amethyst Dust.",
       "push": "Remove a position and a direction from the stack, and apply a force at the position if it is within a fragment. Costs units of Amethyst Dust equal to the length of the direction.",
       "name": "Takes a fragment and sets the label to the name of the nametag in my other hand"
