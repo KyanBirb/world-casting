@@ -2,10 +2,13 @@
   "hexcasting.action.world_casting:": {
     "sub_level": {
       "get_containing": "Fragment Purification",
-      "get_radius": "Zone Distillation: Fragment",
-      "mass": "Mass Purification",
       "pos": "Location Purification",
       "project_position": "Projection Distillation",
+      "get_radius": "Zone Distillation: Fragment",
+      "mass": "Mass Purification",
+      "gravity": "Gravity Purification",
+      "velocity": "Velocity Purification",
+      "air_pressure": "Air Pressure Purification",
 
       "push": "Push",
       "place": "Place Fragment",
@@ -53,10 +56,13 @@
 
     "world_casting.sub_level": {
       "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
-      "get_radius": "Takes a position and a radius, returns every fragment within the radius",
-      "mass": "Returns the total mass of the fragment.",
       "pos": "Returns the position of the center of mass for the fragment.",
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",
+      "get_radius": "Takes a position and a radius, returns every fragment within the radius",
+      "mass": "Returns the total mass of the fragment.",
+      "gravity": "Returns the gravity vector of the given position.",
+      "velocity": "Returns the global velocity at the position within a fragment.",
+      "air_pressure": "Returns the air pressure of the given position.",
 
       "place": "Takes a position and orientation, and places a block from the inventory as a fragment. Costs about an eighth of one Amethyst Dust",
       "assemble_radius": "Turns every block in a position and radius into a single fragment. Returns the fragment that was created. Costs one Amethyst Dust per block.",

@@ -1,26 +1,21 @@
 package dev.kyanbirb.world_casting.util;
 
 import dev.ryanhcode.sable.Sable;
-import dev.ryanhcode.sable.api.SubLevelAssemblyHelper;
 import dev.ryanhcode.sable.api.math.OrientedBoundingBox3d;
-import dev.ryanhcode.sable.api.sublevel.ServerSubLevelContainer;
-import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
+import dev.ryanhcode.sable.api.physics.handle.RigidBodyHandle;
 import dev.ryanhcode.sable.companion.math.BoundingBox3i;
 import dev.ryanhcode.sable.companion.math.BoundingBox3ic;
-import dev.ryanhcode.sable.companion.math.Pose3d;
+import dev.ryanhcode.sable.companion.math.JOMLConversion;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import dev.ryanhcode.sable.sublevel.SubLevel;
-import dev.ryanhcode.sable.sublevel.plot.LevelPlot;
+import dev.ryanhcode.sable.sublevel.system.SubLevelPhysicsSystem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Quaterniond;
 import org.joml.Vector3d;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SubLevelUtil {
@@ -43,44 +38,6 @@ public class SubLevelUtil {
         return position;
     }
 
-    public static @Nullable ServerSubLevel createSingleBlock(ServerLevel level, BlockState state, Pose3d pose3d) {
-        ServerSubLevelContainer container = SubLevelContainer.getContainer(level);
-
-        SubLevel subLevel = container.allocateNewSubLevel(pose3d);
-        LevelPlot plot = subLevel.getPlot();
-        plot.newEmptyChunk(plot.getCenterChunk());
-
-        if(state.canSurvive(level, plot.getCenterBlock())) {
-            level.setBlock(plot.getCenterBlock(), state,2);
-            return (ServerSubLevel) subLevel;
-        }
-
-        return null;
-    }
-
-    public static ServerSubLevel assembleRadius(ServerLevel level, BlockPos center, int radius) {
-        List<BlockPos> toAssemble = new ArrayList<>();
-
-        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos().set(center);
-        for (int z = -radius; z < radius; z++) {
-            for (int y = -radius; y < radius; y++) {
-                for (int x = -radius; x < radius; x++) {
-                    pos.setWithOffset(center, x, y, z);
-                    Vec3 centerPos = pos.getCenter();
-                    double distance = center.distToCenterSqr(centerPos);
-                    if(distance <= radius) {
-                        toAssemble.add(pos.immutable());
-                    }
-                }
-            }
-        }
-
-        BlockPos min = new BlockPos(-radius, -radius, -radius);
-        BlockPos max = new BlockPos(radius, radius, radius);
-
-        return SubLevelAssemblyHelper.assembleBlocks(level, center, toAssemble, new BoundingBox3i(min, max));
-    }
-
     public static double distanceToSubLevel(Vec3 pos, SubLevel subLevel) {
         Level level = subLevel.getLevel();
         Vec3 projected = projectInto(level, pos, subLevel);
@@ -100,5 +57,16 @@ public class SubLevelUtil {
         Quaterniond orientation = subLevel.logicalPose().orientation();
         final double d = OrientedBoundingBox3d.UP.dot(new Vector3d(orientation.x(), orientation.y(), orientation.z()));
         return 2.0 * Math.atan2(-d, orientation.w());
+    }
+
+    public static Vec3 getVelocityAt(Level level, ServerSubLevel subLevel, Vec3 pos) {
+        SubLevelPhysicsSystem system = SubLevelPhysicsSystem.get(level);
+        RigidBodyHandle handle = system.getPhysicsHandle(subLevel);
+
+        Vector3d linear = handle.getLinearVelocity(new Vector3d());
+        Vector3d angular = handle.getAngularVelocity(new Vector3d());
+        double dist = Sable.HELPER.distanceSquaredWithSubLevels(level, subLevel.logicalPose().position(), pos.x, pos.y, pos.z);
+
+        return JOMLConversion.toMojang(linear.add(angular.mul(dist)));
     }
 }

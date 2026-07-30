@@ -53,6 +53,30 @@
       "input": "fragment",
       "output": "num",
       "text": "world_casting.page.world_casting.sub_level.mass"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.gravity",
+      "anchor": "world_casting:sub_level.gravity",
+      "input": "vec",
+      "output": "vec",
+      "text": "world_casting.page.world_casting.sub_level.gravity"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.velocity",
+      "anchor": "world_casting:sub_level.velocity",
+      "input": "vec",
+      "output": "vec",
+      "text": "world_casting.page.world_casting.sub_level.velocity"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:sub_level.air_pressure",
+      "anchor": "world_casting:sub_level.air_pressure",
+      "input": "vec",
+      "output": "num",
+      "text": "world_casting.page.world_casting.sub_level.air_pressure"
     }
   ]
 }

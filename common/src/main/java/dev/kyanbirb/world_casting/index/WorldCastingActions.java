@@ -39,6 +39,24 @@ public class WorldCastingActions {
             new OpGetMass()
     );
 
+    public static final Holder<ActionRegistryEntry> GET_GRAVITY = make(
+            "sub_level.gravity",
+            HexPattern.fromAngles("aawawa", WEST),
+            new OpGetGravity()
+    );
+
+    public static final Holder<ActionRegistryEntry> GET_VELOCITY = make(
+            "sub_level.velocity",
+            HexPattern.fromAngles("aaqwaq", SOUTH_WEST),
+            new OpGetVelocity()
+    );
+
+    public static final Holder<ActionRegistryEntry> GET_AIR_PRESSURE = make(
+            "sub_level.air_pressure",
+            HexPattern.fromAngles("aaeaqq", EAST),
+            new OpGetAirPressure()
+    );
+
     public static final Holder<ActionRegistryEntry> GET_POS = make(
             "sub_level.pos",
             HexPattern.fromAngles("qaaqdee", EAST),
