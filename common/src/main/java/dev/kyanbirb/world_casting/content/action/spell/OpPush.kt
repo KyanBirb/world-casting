@@ -18,6 +18,8 @@ object OpPush : SpellAction {
     override val argc: Int
         get() = 2
 
+    const val COST_SCALE = 1 / 1000f
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): SpellAction.Result {
         val forcePos = args.getVec3(0, argc)
         val globalForce = args.getVec3(1, argc)
@@ -28,8 +30,11 @@ object OpPush : SpellAction {
         val physicsSystem = SubLevelPhysicsSystem.get(env.world)
         val physicsHandle = physicsSystem.getPhysicsHandle(subLevel as ServerSubLevel)
 
+        val aabb = subLevel.plot.boundingBox
+        val subLevelSize = aabb.width() + aabb.height() + aabb.length()
+
         val force = Vector3d(globalForce.toVector3f())
-        val cost = MediaConstants.DUST_UNIT * force.length().toLong()
+        val cost = MediaConstants.DUST_UNIT.toDouble() * force.length() * subLevelSize.toDouble() * COST_SCALE
         force.mul(subLevel.massTracker.mass)
         subLevel.logicalPose().transformNormalInverse(force)
 
@@ -37,7 +42,7 @@ object OpPush : SpellAction {
 
         return SpellAction.Result(
             Spell(physicsHandle, Vector3d(forcePos.x, forcePos.y, forcePos.z), force),
-            cost,
+            cost.toLong(),
             listOf(
                 ParticleSpray(
                     particlePos,
