@@ -44,7 +44,7 @@
       "2": "the most important things to note are:$(br2)- A quaternion represents an orientation.$(br2)- Quaternions can be rotated by multiplying them together. The space of the operation depends on the order$(br)(eg. a * b rotates \"a\" locally by \"b\", and the opposite rotates it globally).$(br2)- they look scary but they don't bite i promise"
     },
     "world_casting.quaternion": {
-      "identity": "Returns a quaternion that represents no rotation (upright, facing north).",
+      "identity": "Returns a quaternion that represents no rotation (upright, facing south).",
       "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
       "conjugate": "Takes a quaternion and returns its conjugate (inverse)",
       "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion or vector by it.",
@@ -58,7 +58,7 @@
 
     "world_casting.sub_level": {
       "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",
-      "pos": "Returns the position of the center of mass for the fragment.",
+      "pos": "Returns the global position of the center of mass for the fragment.",
       "min_bounds": "Returns the position of the local lower-north-west corner of the bounds of the fragment.",
       "max_bounds": "Returns the position of the local upper-south-east corner of the bounds of the fragment.",
       "project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into world space.",

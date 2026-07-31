@@ -35,7 +35,7 @@ public class WorldCastingActions {
 
     public static final Holder<ActionRegistryEntry> GET_MASS = make(
             "sub_level.mass",
-            HexPattern.fromAngles("wdeeeewd", EAST),
+            HexPattern.fromAngles("aaqawa", NORTH_WEST),
             new OpGetMass()
     );
 
