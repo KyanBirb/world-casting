@@ -8,8 +8,8 @@ import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadLocation
 import at.petrak.hexcasting.api.misc.MediaConstants
+import dev.kyanbirb.world_casting.mixinterfaces.DeferredForceHaver
 import dev.ryanhcode.sable.Sable
-import dev.ryanhcode.sable.api.physics.handle.RigidBodyHandle
 import dev.ryanhcode.sable.sublevel.ServerSubLevel
 import dev.ryanhcode.sable.sublevel.system.SubLevelPhysicsSystem
 import org.joml.Vector3d
@@ -26,10 +26,7 @@ object OpPush : SpellAction {
 
         env.assertVecInRange(forcePos)
 
-        val subLevel = Sable.HELPER.getContaining(env.world, forcePos) ?: throw MishapBadLocation(forcePos, "not_in_sub_level")
-        val physicsSystem = SubLevelPhysicsSystem.get(env.world)
-        val physicsHandle = physicsSystem.getPhysicsHandle(subLevel as ServerSubLevel)
-
+        val subLevel = (Sable.HELPER.getContaining(env.world, forcePos) ?: throw MishapBadLocation(forcePos, "not_in_sub_level")) as ServerSubLevel
         val aabb = subLevel.plot.boundingBox
         val subLevelSize = aabb.width() + aabb.height() + aabb.length()
 
@@ -41,7 +38,7 @@ object OpPush : SpellAction {
         val particlePos = subLevel.logicalPose().transformPosition(forcePos)
 
         return SpellAction.Result(
-            Spell(physicsHandle, Vector3d(forcePos.x, forcePos.y, forcePos.z), force),
+            Spell(subLevel, Vector3d(forcePos.x, forcePos.y, forcePos.z), force),
             cost.toLong(),
             listOf(
                 ParticleSpray(
@@ -54,9 +51,16 @@ object OpPush : SpellAction {
         )
     }
 
-    private data class Spell(val handle: RigidBodyHandle, val forcePos: Vector3d, val force: Vector3d) : RenderedSpell {
+    private data class Spell(val subLevel: ServerSubLevel, val forcePos: Vector3d, val force: Vector3d) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
-            handle.applyImpulseAtPoint(forcePos, force)
+            val deferredForceHaver = subLevel as DeferredForceHaver
+            if(deferredForceHaver.`world_casting$hasForceTotal`()) {
+                deferredForceHaver.`world_casting$getForceTotal`().applyImpulseAtPoint(subLevel, forcePos, force)
+            } else {
+                val physicsSystem = SubLevelPhysicsSystem.get(env.world)
+                val physicsHandle = physicsSystem.getPhysicsHandle(subLevel as ServerSubLevel)
+                physicsHandle.applyImpulseAtPoint(forcePos, force)
+            }
         }
     }
 

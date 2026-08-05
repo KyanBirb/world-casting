@@ -12,8 +12,10 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.ktxt.UseOnContext
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import dev.kyanbirb.world_casting.content.action.RenderedSpellThatReturnsSomething
+import dev.kyanbirb.world_casting.mixinterfaces.DeferredForceHaver
 import dev.kyanbirb.world_casting.util.asActionResult
 import dev.kyanbirb.world_casting.util.getQuaternion
+import dev.ryanhcode.sable.api.physics.force.ForceTotal
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer
 import dev.ryanhcode.sable.companion.math.Pose3d
 import dev.ryanhcode.sable.sublevel.SubLevel
@@ -132,6 +134,9 @@ object OpPlaceSubLevel : SpellAction {
                                     particle, blockPos.x.toDouble(), blockPos.y.toDouble(), blockPos.z.toDouble(),
                                     4, 0.1, 0.2, 0.1, 0.1
                                 )
+
+                                val deferredForceHaver = subLevel as DeferredForceHaver
+                                deferredForceHaver.`world_casting$setForceTotal`(ForceTotal())
                             }
                         }
                     }

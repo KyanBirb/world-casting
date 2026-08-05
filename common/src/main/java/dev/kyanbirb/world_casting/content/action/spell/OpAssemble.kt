@@ -9,8 +9,10 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
 import dev.kyanbirb.world_casting.content.action.RenderedSpellThatReturnsSomething
+import dev.kyanbirb.world_casting.mixinterfaces.DeferredForceHaver
 import dev.kyanbirb.world_casting.util.asActionResult
 import dev.ryanhcode.sable.api.SubLevelAssemblyHelper
+import dev.ryanhcode.sable.api.physics.force.ForceTotal
 import dev.ryanhcode.sable.companion.math.BoundingBox3i
 import dev.ryanhcode.sable.sublevel.SubLevel
 import net.minecraft.core.BlockPos
@@ -99,6 +101,8 @@ object OpAssemble : SpellAction {
         override fun cast(env: CastingEnvironment) {
             val box = BoundingBox3i.from(toAssemble)
             subLevel = SubLevelAssemblyHelper.assembleBlocks(env.world, center, toAssemble, box)
+            val deferredForceHaver = subLevel as DeferredForceHaver
+            deferredForceHaver.`world_casting$setForceTotal`(ForceTotal())
         }
 
         override fun getReturnValue(
