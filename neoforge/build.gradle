@@ -1,8 +1,10 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
-    id "at.petra-k.pkpcpbp.PKJson5Plugin"
 }
+
+def generatedResources = project(":common").file("src/generated/resources")
+def commonResources = project(":common").file("src/main/resources")
 
 neoForge {
     version = neoforge_version
@@ -25,6 +27,11 @@ neoForge {
         }
         data {
             data()
+            gameDirectory = project.file('runs/data')
+            programArguments.addAll '--all',
+                    '--mod', 'world_casting',
+                    '--output', generatedResources.absolutePath,
+                    '--existing', commonResources.absolutePath
         }
         server {
             server()
@@ -62,6 +69,6 @@ dependencies {
 
 }
 
-sourceSets.main {
-    resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources {
+    srcDir generatedResources.absolutePath
 }

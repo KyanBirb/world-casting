@@ -23,7 +23,7 @@
       "identity": "Identity Purification",
       "orientation": "Orientation Purification",
       "conjugate": "Conjugate Purification",
-      "axis_angle": "Axial Distillation",
+      "axis_angle": "Axial Distillation"
     }
   },
 
@@ -40,22 +40,23 @@
   },
 
   "world_casting.page": {
-    "quaternions": {
-      "1": "i don't currently have the capacity to explain this in depth so the 3b1b video will have to do for now:",
-      "2": "the most important things to note are:$(br2)- A quaternion represents an orientation.$(br2)- Quaternions can be rotated by multiplying them together. The space of the operation depends on the order$(br)(eg. a * b rotates \"a\" locally by \"b\", and the opposite rotates it globally).$(br2)- they look scary but they don't bite i promise"
-    },
+    "quaternions": [
+      "i don't currently have the capacity to explain this in depth so the 3b1b video will have to do for now:",
+      "the most important things to note are:$(br2)- A quaternion represents an orientation.$(br2)- Quaternions can be rotated by multiplying them together. The space of the operation depends on the order$(br)(eg. a * b rotates \"a\" locally by \"b\", and the opposite rotates it globally).$(br2)- they look scary but they don't bite i promise"
+    ],
+
     "world_casting.quaternion": {
       "identity": "Returns a quaternion that represents no rotation (upright, facing south).",
       "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
       "conjugate": "Takes a quaternion and returns its conjugate (inverse)",
       "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion or vector by it.",
-      "axis_angle": "Removes a direction and an angle from the stack, and returns a quaternion that represents a rotation by the angle around the axis of the direction",
+      "axis_angle": "Removes a direction and an angle from the stack, and returns a quaternion that represents a rotation by the angle around the axis of the direction"
     },
 
-    "fragments": {
-      "1": "Fragments are separated sections of the world capable of moving independently. They can fall, roll around, and collide with things all while everything in them behaves as it would in the rest of the world.$(br)Hexes can interact with them normally as well.",
-      "2": "When working with coordinates inside the space of a fragment, they appear localized relative to an arbitrary \"center\" position. Internally, these local positions are very large vectors and still behave like them when operated on."
-    },
+    "fragments": [
+      "Fragments are separated sections of the world capable of moving independently. They can fall, roll around, and collide with things all while everything in them behaves as it would in the rest of the world.$(br)Hexes can interact with them normally as well.",
+      "When working with coordinates inside the space of a fragment, they appear localized relative to an arbitrary \"center\" position. Internally, these local positions are very large vectors and still behave like them when operated on."
+    ],
 
     "world_casting.sub_level": {
       "get_containing": "Removes a position or an entity from the stack and returns the fragment that contains it (or null).",

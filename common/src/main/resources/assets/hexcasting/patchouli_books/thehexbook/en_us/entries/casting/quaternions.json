@@ -8,13 +8,13 @@
   "pages": [
     {
       "type": "patchouli:link",
-      "text": "world_casting.page.quaternions.1",
+      "text": "world_casting.page.quaternions_1",
       "link_text": "hexcasting.page.vectors.1.link_text",
       "url": "https://www.youtube.com/watch?v=zjMuIxRvygQ"
     },
     {
       "type": "patchouli:text",
-      "text": "world_casting.page.quaternions.2"
+      "text": "world_casting.page.quaternions_2"
     }
   ]
 }

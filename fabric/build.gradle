@@ -1,7 +1,6 @@
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
-    id "at.petra-k.pkpcpbp.PKJson5Plugin"
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
@@ -65,4 +64,8 @@ loom {
             runDir('runs/server')
         }
     }
+}
+
+sourceSets.main.resources {
+    srcDir project(":common").file("src/generated/resources").absolutePath
 }

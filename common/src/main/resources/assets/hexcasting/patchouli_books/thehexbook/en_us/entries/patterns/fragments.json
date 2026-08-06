@@ -8,11 +8,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "world_casting.page.fragments.1"
+      "text": "world_casting.page.fragments_1"
     },
     {
       "type": "patchouli:text",
-      "text": "world_casting.page.fragments.2"
+      "text": "world_casting.page.fragments_2"
     },
     {
       "type": "hexcasting:pattern",
