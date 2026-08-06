@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 
 public class WorldCastingLang {
-    private static final Map<String, String> LANG_MAP = new HashMap<>();
+    public static final Map<String, String> LANG_MAP = new HashMap<>();
 
     public static void provideLang(BiConsumer<String, String> consumer, String locale) {
         LANG_MAP.forEach(consumer);

@@ -8,6 +8,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(dist = Dist.CLIENT, value = WorldCasting.MOD_ID)
 public class WorldCastingNeoForgeClient {
@@ -15,6 +17,7 @@ public class WorldCastingNeoForgeClient {
     public WorldCastingNeoForgeClient(IEventBus eventBus, ModContainer container) {
         WorldCastingClient.init();
         container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
 }
