@@ -1,4 +1,4 @@
-package dev.kyanbirb.world_casting.mixin.sable_compat;
+package dev.kyanbirb.world_casting.mixin.sable_compat.ambit;
 
 import at.petrak.hexcasting.api.casting.circles.CircleExecutionState;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;

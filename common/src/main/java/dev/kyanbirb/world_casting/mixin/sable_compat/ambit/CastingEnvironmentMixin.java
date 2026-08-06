@@ -1,4 +1,4 @@
-package dev.kyanbirb.world_casting.mixin.sable_compat;
+package dev.kyanbirb.world_casting.mixin.sable_compat.ambit;
 
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
@@ -16,11 +16,6 @@ public class CastingEnvironmentMixin {
     @Shadow
     @Final
     protected ServerLevel world;
-
-    @WrapMethod(method = "isVecInRange")
-    private boolean world_casting$isVecInRange(Vec3 vec, Operation<Boolean> original) {
-        return original.call(Sable.HELPER.projectOutOfSubLevel(world, vec));
-    }
 
     @WrapMethod(method = "isVecInWorld")
     private boolean world_casting$isVecInWorld(Vec3 vec, Operation<Boolean> original) {

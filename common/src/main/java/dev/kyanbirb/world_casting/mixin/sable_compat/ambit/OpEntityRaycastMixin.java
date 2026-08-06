@@ -1,4 +1,4 @@
-package dev.kyanbirb.world_casting.mixin.sable_compat;
+package dev.kyanbirb.world_casting.mixin.sable_compat.ambit;
 
 import at.petrak.hexcasting.common.casting.actions.raycast.OpEntityRaycast;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
