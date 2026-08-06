@@ -2,7 +2,9 @@ package dev.kyanbirb.world_casting;
 
 import dev.kyanbirb.world_casting.content.iota.quaternion.DefaultQuaternionProvider;
 import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionProvider;
+import dev.kyanbirb.world_casting.events.CommonEvents;
 import dev.kyanbirb.world_casting.index.*;
+import dev.ryanhcode.sable.platform.SableEventPlatform;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,7 @@ public class WorldCasting {
         WorldCastingIotaTypes.init();
         WorldCastingActions.init();
         WorldCastingArithmetics.init();
+        SableEventPlatform.INSTANCE.onSubLevelContainerReady(CommonEvents::subLevelContainerReady);
     }
 
     public static ResourceLocation path(String path) {
