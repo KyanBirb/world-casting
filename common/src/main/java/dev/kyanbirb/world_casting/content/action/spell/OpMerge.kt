@@ -4,10 +4,13 @@ import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
+import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadBlock
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadLocation
 import at.petrak.hexcasting.api.misc.MediaConstants
+import dev.kyanbirb.world_casting.config.CommonConfig
+import dev.kyanbirb.world_casting.content.mishap.MishapInvalidDistance
 import dev.kyanbirb.world_casting.util.SubLevelUtil
 import dev.ryanhcode.sable.Sable
 import dev.ryanhcode.sable.api.SubLevelAssemblyHelper
@@ -31,6 +34,11 @@ object OpMerge : SpellAction {
         env.assertPosInRange(fromPos)
         env.assertPosInRange(toPos)
 
+        val distance = sqrt(Sable.HELPER.distanceSquaredWithSubLevels(env.world, fromPos.center, toPos.center))
+        if(distance > CommonConfig.MAX_MERGE_DISTANCE.asDouble) {
+            throw MishapInvalidDistance(fromPos.center, toPos.center, CommonConfig.MAX_MERGE_DISTANCE.asDouble)
+        }
+
         val fromSubLevel = Sable.HELPER.getContaining(env.world, fromPos)
             ?: throw MishapBadLocation(fromPos.center, "not_in_sub_level")
 
@@ -44,7 +52,6 @@ object OpMerge : SpellAction {
         val rotation = when(Math.floorMod(turns, 4)) {
             0 -> Rotation.NONE
             1 -> Rotation.COUNTERCLOCKWISE_90
-
             2 -> Rotation.CLOCKWISE_180
             3 -> Rotation.CLOCKWISE_90
             else -> null
@@ -63,11 +70,9 @@ object OpMerge : SpellAction {
             }
         }
 
-        val cost = blocks.size + sqrt(Sable.HELPER.distanceSquaredWithSubLevels(env.world, fromPos.center, toPos.center))
-
         return SpellAction.Result(
             Spell(fromSubLevel as ServerSubLevel, blocks, transform),
-            (MediaConstants.DUST_UNIT * cost).toLong(),
+            MediaConstants.DUST_UNIT * blocks.size,
             listOf()
         )
     }
@@ -75,9 +80,6 @@ object OpMerge : SpellAction {
     private data class Spell(val fromSubLevel: ServerSubLevel, val blocks: List<BlockPos>, val transform: SubLevelAssemblyHelper.AssemblyTransform): RenderedSpell {
         override fun cast(env: CastingEnvironment) {
             val boundingBox = BoundingBox3i.from(blocks)
-
-
-
             SubLevelAssemblyHelper.moveTrackingPoints(env.world, boundingBox, fromSubLevel, transform)
             SubLevelAssemblyHelper.moveOtherStuff(env.world, transform, blocks, boundingBox)
             SubLevelAssemblyHelper.moveBlocks(env.world, transform, blocks)

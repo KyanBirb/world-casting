@@ -2,8 +2,10 @@ package dev.kyanbirb.world_casting.content.iota.fragment;
 
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
+import at.petrak.hexcasting.api.casting.iota.Vec3Iota;
 import com.mojang.serialization.MapCodec;
 import dev.kyanbirb.world_casting.index.WorldCastingIotaTypes;
+import dev.ryanhcode.sable.Sable;
 import dev.ryanhcode.sable.api.sublevel.ServerSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.sublevel.SubLevel;
@@ -114,6 +116,14 @@ public class FragmentIota extends Iota {
         }
 
         return component.withColor(WorldCastingIotaTypes.FRAGMENT.value().color());
+    }
+
+    public static Component getVec3Display(Level level, Vec3 pos) {
+        SubLevel containing = Sable.HELPER.getContaining(level, pos);
+        if(containing != null) {
+            return getVec3Display(containing, pos);
+        }
+        return Vec3Iota.display(pos);
     }
 
     public static Component getVec3Display(SubLevel subLevel, Vec3 pos) {
