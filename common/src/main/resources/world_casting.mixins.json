@@ -6,12 +6,13 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [
     "deferred_force.ServerSubLevelMixin",
+    "sable_compat.OpTeleportMixin",
     "sable_compat.PlayerBasedMishapEnvMixin",
     "sable_compat.SubLevelAssemblyHelperMixin",
+    "sable_compat.ambit.CastingEnvironmentImplMixin",
     "sable_compat.ambit.CastingEnvironmentMixin",
     "sable_compat.ambit.CircleCastingEnvMixin",
     "sable_compat.ambit.OpEntityRaycastMixin",
-    "sable_compat.ambit.CastingEnvironmentImplMixin",
     "text_component.TranslatableContentsMixin"
   ],
   "client": [
