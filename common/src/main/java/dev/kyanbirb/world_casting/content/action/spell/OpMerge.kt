@@ -72,7 +72,7 @@ object OpMerge : SpellAction {
 
         return SpellAction.Result(
             Spell(fromSubLevel as ServerSubLevel, blocks, transform),
-            MediaConstants.DUST_UNIT * blocks.size,
+            MediaConstants.DUST_UNIT * blocks.size / 4,
             listOf()
         )
     }

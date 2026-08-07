@@ -55,7 +55,7 @@ object OpAssemble : SpellAction {
 
         return SpellAction.Result(
             Spell(toAssemble, start),
-            MediaConstants.DUST_UNIT * toAssemble.size,
+            MediaConstants.DUST_UNIT * toAssemble.size / 4,
             listOf()
         )
     }
