@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:reinforced_deepslate",
+    "minecraft:bedrock",
+    "minecraft:vault",
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "minecraft:barrier",
+    "minecraft:structure_void",
+    "minecraft:structure_block",
+    "minecraft:jigsaw",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:repeating_command_block",
+    "#c:relocation_not_supported"
+  ]
+}

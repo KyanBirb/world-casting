@@ -33,7 +33,10 @@
   "hexcasting.mishap.location_in_same_grid": "Expected a position within a different fragment or the world but got %s instead",
   "hexcasting.mishap.invalid_value.class.fragment": "a fragment",
   "hexcasting.mishap.world_casting.invalid_distance": "Distance between %s and %s is too great. Expected a distance of less than %s but got %s instead.",
-  "hexcasting.mishap.world_casting.expected_non_zero": "Expected at least one parameter to be non-zero.",
+  "hexcasting.mishap.bad_block.moveable": "a block that can be moved",
+
+  "hexcasting.mishap.world_casting.generic.expected_non_zero": "Expected at least one parameter to be non-zero.",
+  "hexcasting.mishap.world_casting.generic.expected_non_air": "Expected at least one non air block in fracture area.",
 
   "world_casting.entry": {
     "quaternions": "Quaternions",
