@@ -4,9 +4,7 @@ import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.api.casting.castables.Action;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import dev.kyanbirb.world_casting.PlatformHelper;
-import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpAxisAngle;
-import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpConjugate;
-import dev.kyanbirb.world_casting.content.action.pattern.quaternion.OpGetOrientation;
+import dev.kyanbirb.world_casting.content.action.pattern.quaternion.*;
 import dev.kyanbirb.world_casting.content.action.pattern.sub_level.*;
 import dev.kyanbirb.world_casting.content.action.spell.*;
 import dev.kyanbirb.world_casting.content.iota.quaternion.QuaternionIota;
@@ -127,6 +125,18 @@ public class WorldCastingActions {
             "quaternion.conjugate",
             HexPattern.fromAngles("deed", EAST),
             new OpConjugate()
+    );
+
+    public static final Holder<ActionRegistryEntry> QUAT_CONSTRUCT = make(
+            "quaternion.construct",
+            HexPattern.fromAngles("wwaqq", EAST),
+            new OpConstructQuaternion()
+    );
+
+    public static final Holder<ActionRegistryEntry> QUAT_DECONSTRUCT = make(
+            "quaternion.deconstruct",
+            HexPattern.fromAngles("qeedw", EAST),
+            new OpDeconstructQuaternion()
     );
 
     public static final Holder<ActionRegistryEntry> QUAT_AXIS_ANGLE = make(

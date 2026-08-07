@@ -40,6 +40,22 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.construct",
+      "anchor": "world_casting:quaternion.construct",
+      "input": "num, num, num, num",
+      "output": "qtrn",
+      "text": "world_casting.page.world_casting.quaternion.construct"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "world_casting:quaternion.deconstruct",
+      "anchor": "world_casting:quaternion.deconstruct",
+      "input": "qtrn",
+      "output": "num, num, num, num",
+      "text": "world_casting.page.world_casting.quaternion.deconstruct"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "world_casting:quaternion.axis_angle",
       "anchor": "world_casting:quaternion.axis_angle",
       "input": "vec, num",

@@ -23,6 +23,8 @@
       "identity": "Identity Purification",
       "orientation": "Orientation Purification",
       "conjugate": "Conjugate Purification",
+      "construct": "Quaternion Exaltation",
+      "deconstruct": "Quaternion Disintegration",
       "axis_angle": "Axial Distillation"
     }
   },
@@ -31,6 +33,7 @@
   "hexcasting.mishap.location_in_same_grid": "Expected a position within a different fragment or the world but got %s instead",
   "hexcasting.mishap.invalid_value.class.fragment": "a fragment",
   "hexcasting.mishap.world_casting.invalid_distance": "Distance between %s and %s is too great. Expected a distance of less than %s but got %s instead.",
+  "hexcasting.mishap.world_casting.expected_non_zero": "Expected at least one parameter to be non-zero.",
 
   "world_casting.entry": {
     "quaternions": "Quaternions",
@@ -50,6 +53,8 @@
       "orientation": "Returns a quaternion that represents the orientation of an entity or fragment.",
       "conjugate": "Takes a quaternion and returns its conjugate (inverse)",
       "mul": "Removes a quaternion from the top of the stack and rotates the following quaternion or vector by it.",
+      "construct": "Combine four numbers at the top of the stack into a quaternion's Real, I, J, and K components (bottom to top). At least one of the components must be non-zero, as the resulting quaternion is normalized.",
+      "deconstruct": "Split a quaternion into its Real, I, J, and K components (bottom to top)",
       "axis_angle": "Removes a direction and an angle from the stack, and returns a quaternion that represents a rotation by the angle around the axis of the direction"
     },
 
