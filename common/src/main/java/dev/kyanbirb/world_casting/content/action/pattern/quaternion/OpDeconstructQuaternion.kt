@@ -2,14 +2,9 @@ package dev.kyanbirb.world_casting.content.action.pattern.quaternion
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
-import at.petrak.hexcasting.api.casting.getDouble
-import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
-import dev.kyanbirb.world_casting.util.asActionResult
 import dev.kyanbirb.world_casting.util.getQuaternion
-import org.joml.AxisAngle4d
-import org.joml.Quaterniond
 
 class OpDeconstructQuaternion : ConstMediaAction {
     override val argc: Int

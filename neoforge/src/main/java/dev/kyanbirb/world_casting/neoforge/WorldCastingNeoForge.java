@@ -6,7 +6,6 @@ import dev.kyanbirb.world_casting.config.CommonConfig;
 import dev.kyanbirb.world_casting.neoforge.data.WorldCastingLanguageProvider;
 import dev.kyanbirb.world_casting.neoforge.platform.NeoForgePlatformHelper;
 import net.minecraft.data.PackOutput;
-import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

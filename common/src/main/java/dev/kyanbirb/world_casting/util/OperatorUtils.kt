@@ -5,7 +5,6 @@ import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import com.mojang.datafixers.util.Either
 import dev.kyanbirb.world_casting.WorldCasting
 import dev.kyanbirb.world_casting.content.iota.fragment.FragmentIota
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer
