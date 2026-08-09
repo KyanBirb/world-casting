@@ -64,6 +64,6 @@
   "world_casting.page.world_casting.sub_level.place": "Takes a position and orientation, and places a block from the inventory as a fragment. Costs about an eighth of one Amethyst Dust",
   "world_casting.page.world_casting.sub_level.pos": "Returns the local position of the center of mass for the fragment. $(l:patterns/fragments#world_casting:sub_level.project_position)$(action)Projection Distillation/$ can be used to transform it into global space.",
   "world_casting.page.world_casting.sub_level.project_position": "Transforms the given position into the space of the fragment. If the fragment is null, the position is transformed into global space.",
-  "world_casting.page.world_casting.sub_level.push": "Remove a position and a direction from the stack, and apply a force at the position if it is within a fragment. Costs one-thousandth of an Amethyst Dust multiplied by the length of the direction and by the sum of the fragment's side lengths.",
+  "world_casting.page.world_casting.sub_level.push": "Takes a position within a fragment and a direction vector, and applies a momentary acceleration at the position with the direction and magnitude given by the second vector. Costs one-thousandth of an Amethyst Dust multiplied by the length of the direction and by the sum of the fragment's side lengths.",
   "world_casting.page.world_casting.sub_level.velocity": "Returns the global velocity at the position within a fragment."
 }
