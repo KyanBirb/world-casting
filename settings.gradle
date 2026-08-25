@@ -42,6 +42,9 @@ pluginManagement {
         }
         maven { url 'https://maven.blamejared.com' }
     }
+    plugins {
+        id "org.jetbrains.kotlin.kapt" version '2.2.20'
+    }
 }
 
 plugins {

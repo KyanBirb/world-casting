@@ -26,7 +26,9 @@ class OpGetSubLevels : ConstMediaAction {
         val subLevels = Sable.HELPER.getAllIntersecting(env.world, box).sortedBy {
             Sable.HELPER.distanceSquaredWithSubLevels(env.world, JOMLConversion.toJOML(pos), it.logicalPose().position())
         }.filter {
-            SubLevelUtil.distanceToSubLevel(pos, it) <= radius
+            val dist = SubLevelUtil.distanceToSubLevel(pos, it)
+            val subLevelPos = JOMLConversion.toMojang(it.logicalPose().position())
+            dist <= radius && env.isVecInAmbit(subLevelPos)
         }
 
         return subLevels.asActionResult
