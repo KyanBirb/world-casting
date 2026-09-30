@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   build:
+    if: github.repository == 'KyanBirb/world-casting'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
