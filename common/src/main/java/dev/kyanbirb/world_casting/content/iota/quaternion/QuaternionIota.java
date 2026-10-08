@@ -1,5 +1,6 @@
 package dev.kyanbirb.world_casting.content.iota.quaternion;
 
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import com.mojang.serialization.MapCodec;
@@ -24,7 +25,7 @@ public class QuaternionIota extends Iota {
     }
 
     @Override
-    public boolean isTruthy() {
+    public boolean isTruthy(CastingEnvironment environment) {
         return true;
     }
 

@@ -18,7 +18,7 @@ interface RenderedSpellThatReturnsSomething : RenderedSpell {
             parenthesized = image.parenthesized,
             escapeNext = image.escapeNext,
             opsConsumed = image.opsConsumed,
-            userData = image.userData
+            components = image.components
         )
     }
 

@@ -1,5 +1,6 @@
 package dev.kyanbirb.world_casting.content.iota.fragment;
 
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.iota.Iota;
 import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota;
@@ -35,7 +36,7 @@ public class FragmentIota extends Iota {
     }
 
     @Override
-    public boolean isTruthy() {
+    public boolean isTruthy(CastingEnvironment environment) {
         return true;
     }
 
