@@ -11,7 +11,7 @@ import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin({PlayerBasedCastEnv.class, CircleCastEnv.class})
+@Mixin(value = {PlayerBasedCastEnv.class, CircleCastEnv.class}, targets = {"ram.talia.hexal.api.casting.eval.env.WispCastEnv"})
 public abstract class CastingEnvironmentImplMixin extends CastingEnvironment {
 
     protected CastingEnvironmentImplMixin(ServerLevel world) {

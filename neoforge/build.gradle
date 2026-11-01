@@ -61,6 +61,8 @@ dependencies {
     implementation("com.samsthenerd.inline:inline-neoforge:$minecraft_version-$inline_version")
     implementation("dev.architectury:architectury-neoforge:$architectury_api_version")
     implementation("io.wispforest:accessories-neoforge:$accessories_version+$minecraft_version")
+    implementation("ram.talia.moreiotas:moreiotas-0.1.1-$minecraft_version-devel-pre-4")
+    implementation("ram.talia.hexal:hexal-0.3.1-NEOFORGE-DEVEL-pre-15")
 
     // NeoForge
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")

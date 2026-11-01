@@ -42,6 +42,9 @@ dependencies {
     implementation("dev.architectury:architectury:$architectury_api_version") { transitive = false }
     implementation("io.wispforest:accessories-common:$accessories_version+$minecraft_version") { transitive = false }
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
+
+    implementation("ram.talia.moreiotas:moreiotas-0.1.1-$minecraft_version-devel-pre-4")
+    implementation("ram.talia.hexal:hexal-0.3.1-NEOFORGE-DEVEL-pre-15")
 }
 
 configurations {
